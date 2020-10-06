@@ -8,6 +8,7 @@ from app import app
 
 # The node with which our application interacts, there can be multiple
 # such nodes as well.
+nodelist = list(range(8000,8010))
 CONNECTED_NODE_ADDRESS = "http://127.0.0.1:8000"
 
 posts = []
@@ -38,8 +39,7 @@ def fetch_posts():
 def index():
     fetch_posts()
     return render_template('index.html',
-                           title='YourNet: Decentralized '
-                                 'content sharing',
+                           title='Blockchain for storing IoT Data',
                            posts=posts,
                            node_address=CONNECTED_NODE_ADDRESS,
                            readable_time=timestamp_to_string)
@@ -48,13 +48,13 @@ def index():
 @app.route('/submit', methods=['POST'])
 def submit_textarea():
     """
-    Endpoint to create a new transaction via our application.
+    Endpoint to create a new transaction 
     """
     post_content = request.form["content"]
-    author = request.form["author"]
+    dev_id = request.form["dev_id"]
 
     post_object = {
-        'author': author,
+        'dev_id': dev_id,
         'content': post_content,
     }
 
