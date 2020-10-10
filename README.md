@@ -87,7 +87,7 @@ This will make the node at port 8000 aware of the nodes at port 8001 and 8002, a
 
 To update the node with which the frontend application syncs (default is localhost port 8000), change `CONNECTED_NODE_ADDRESS` field in the [views.py](/app/views.py) file.
 
-Once you do all this, you can run the application, create transactions (post messages via the web inteface), and once you mine the transactions, all the nodes in the network will update the chain. The chain of the nodes can also be inspected by inovking `/chain` endpoint using cURL.
+Once you do all this, you can run the application, create subblocks (post messages via the web inteface), and once you mine the subblocks, all the nodes in the network will update the chain. The chain of the nodes can also be inspected by inovking `/chain` endpoint using cURL.
 
 ```sh
 $ curl -X GET http://localhost:8001/chain

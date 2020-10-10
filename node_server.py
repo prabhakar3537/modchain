@@ -1,15 +1,30 @@
 from hashlib import sha256
 import json
 import time
-
 from flask import Flask, request
 import requests
+import random
+import app.globals as globals
+
+leader_group = []
+
+def update_leader():
+    print("UPDATEEEEEEEEEEEEEEEEEE")
+    with open('app/globals.json', 'r+') as f:
+        data = json.load(f)
+        print(data['CURRENT_LEADER'])
+        data['CURRENT_LEADER'] = (data['CURRENT_LEADER']+1)%10
+        print(data['CURRENT_LEADER'])
+        f.seek(0)     
+        json.dump(data, f, indent=4)
+        f.truncate() 
+    return
 
 
 class Block:
-    def __init__(self, index, transactions, timestamp, previous_hash, nonce=0):
+    def __init__(self, index, subblocks, timestamp, previous_hash, nonce=0):
         self.index = index
-        self.transactions = transactions
+        self.subblocks = subblocks
         self.timestamp = timestamp
         self.previous_hash = previous_hash
         self.nonce = nonce
@@ -25,9 +40,11 @@ class Block:
 class Blockchain:
     # difficulty of our PoW algorithm
     difficulty = 2
-
     def __init__(self):
-        self.unconfirmed_transactions = []
+        global leader_group
+        for i in range(globals.group_size):
+            leader_group.append(i)
+        self.unconfirmed_subblocks = []
         self.chain = []
 
     def create_genesis_block(self):
@@ -39,6 +56,17 @@ class Blockchain:
         genesis_block = Block(0, [], 0, "0")
         genesis_block.hash = genesis_block.compute_hash()
         self.chain.append(genesis_block)
+
+    def add_core_block(self, proof):
+        block = Block(last_block.index+1, [], timestamp=time.time, previous_hash=last_block.hash)
+        previous_hash = self.last_block.hash
+        if previous_hash != block.previous_hash:
+            return False
+        if not Blockchain.is_valid_proof(block, proof):
+            return False
+        block.hash = proof
+        self.chain.append(block)
+        return True
 
     @property
     def last_block(self):
@@ -79,8 +107,8 @@ class Blockchain:
 
         return computed_hash
 
-    def add_new_transaction(self, transaction):
-        self.unconfirmed_transactions.append(transaction)
+    def add_new_subblock(self, subblock):
+        self.unconfirmed_subblocks.append(subblock)
 
     @classmethod
     def is_valid_proof(cls, block, block_hash):
@@ -114,24 +142,23 @@ class Blockchain:
     def mine(self):
         """
         This function serves as an interface to add the pending
-        transactions to the blockchain by adding them to the block
+        subblocks to the blockchain by adding them to the block
         and figuring out Proof Of Work.
         """
-        if not self.unconfirmed_transactions:
+        if not self.unconfirmed_subblocks:
             return False
 
         last_block = self.last_block
 
         new_block = Block(index=last_block.index + 1,
-                          transactions=self.unconfirmed_transactions,
+                          subblocks=self.unconfirmed_subblocks,
                           timestamp=time.time(),
                           previous_hash=last_block.hash)
 
         proof = self.proof_of_work(new_block)
         self.add_block(new_block, proof)
 
-        self.unconfirmed_transactions = []
-
+        self.unconfirmed_subblocks = []
         return True
 
 
@@ -145,20 +172,20 @@ blockchain.create_genesis_block()
 peers = set()
 
 
-# endpoint to submit a new transaction. This will be used by
+# endpoint to submit a new subblock. This will be used by
 # our application to add new data (posts) to the blockchain
-@app.route('/new_transaction', methods=['POST'])
-def new_transaction():
+@app.route('/new_subblock', methods=['POST'])
+def new_subblock():
     tx_data = request.get_json()
     required_fields = ["dev_id", "content"]
 
     for field in required_fields:
         if not tx_data.get(field):
-            return "Invalid transaction data", 404
+            return "Invalid subblock data", 404
 
     tx_data["timestamp"] = time.time()
 
-    blockchain.add_new_transaction(tx_data)
+    blockchain.add_new_subblock(tx_data)
 
     return "Success", 201
 
@@ -177,13 +204,14 @@ def get_chain():
 
 
 # endpoint to request the node to mine the unconfirmed
-# transactions (if any). We'll be using it to initiate
+# subblocks (if any). We'll be using it to initiate
 # a command to mine from our application itself.
 @app.route('/mine', methods=['GET'])
-def mine_unconfirmed_transactions():
+def mine_unconfirmed_subblocks():
     result = blockchain.mine()
+    update_leader()
     if not result:
-        return "No transactions to mine"
+        return "No subblocks to mine?"
     else:
         # Making sure we have the longest chain before announcing to the network
         chain_length = len(blockchain.chain)
@@ -247,7 +275,7 @@ def create_chain_from_dump(chain_dump):
         if idx == 0:
             continue  # skip genesis block
         block = Block(block_data["index"],
-                      block_data["transactions"],
+                      block_data["subblocks"],
                       block_data["timestamp"],
                       block_data["previous_hash"],
                       block_data["nonce"])
@@ -265,7 +293,7 @@ def create_chain_from_dump(chain_dump):
 def verify_and_add_block():
     block_data = request.get_json()
     block = Block(block_data["index"],
-                  block_data["transactions"],
+                  block_data["subblocks"],
                   block_data["timestamp"],
                   block_data["previous_hash"],
                   block_data["nonce"])
@@ -279,10 +307,10 @@ def verify_and_add_block():
     return "Block added to the chain", 201
 
 
-# endpoint to query unconfirmed transactions
+# endpoint to query unconfirmed subblocks
 @app.route('/pending_tx')
 def get_pending_tx():
-    return json.dumps(blockchain.unconfirmed_transactions)
+    return json.dumps(blockchain.unconfirmed_subblocks)
 
 
 def consensus():
