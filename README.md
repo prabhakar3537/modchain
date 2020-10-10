@@ -1,16 +1,6 @@
-# python_blockchain_app
 
-A simple tutorial for developing a blockchain application from scratch in Python.
+[step-by-step implementation tutorial](https://www.ibm.com/developerworks/cloud/library/cl-develop-blockchain-app-in-python/index.html)
 
-## What is blockchain? How it is implemented? And how it works?
-
-Please read the [step-by-step implementation tutorial](https://www.ibm.com/developerworks/cloud/library/cl-develop-blockchain-app-in-python/index.html) to get your answers :)
-
-## Instructions to run
-
-Clone the project,
-
-```sh
 $ git clone https://github.com/satwikkansal/python_blockchain_app.git
 ```
 
@@ -40,7 +30,6 @@ $ python run_app.py
 
 The application should be up and running at [http://localhost:5000](http://localhost:5000).
 
-Here are a few screenshots
 
 1. Posting some content
 
@@ -56,7 +45,6 @@ Here are a few screenshots
 
 To play around by spinning off multiple custom nodes, use the `register_with/` endpoint to register a new node. 
 
-Here's a sample scenario that you might wanna try,
 
 ```sh
 # Make sure you set the FLASK_APP environment variable to node_server.py before running these nodes
@@ -94,4 +82,3 @@ $ curl -X GET http://localhost:8001/chain
 $ curl -X GET http://localhost:8002/chain
 ```
 
-*PS: For consulting, you can reach out to me via Codementor (use [this link](https://www.codementor.io/satwikkansal?partner=satwikkansal) for free 10$ credits).*
