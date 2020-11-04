@@ -1,4 +1,6 @@
 <!-- extend base layout -->
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
+
 {% extends "base.html" %}
 
 {% block content %}
@@ -7,11 +9,13 @@
 	<center>
 	<form action="/submit" id="textform" method="post">
 	    <textarea name="content" rows="4" cols="50" placeholder="Data from IOT Devices"></textarea>
-	    <br>
-	    <input type="text" name="dev_id" placeholder="Device ID">
+		<br>
+		<br>
+		<input type="text" name="dev_id" placeholder="Device ID">
+		<br>
 	    <input type="submit" value="Post">
 	</form>
-	<br>
+
 
 	<a href="{{node_address}}/mine" target="_blank"><button>Mine blocks in buffer</button></a>
 	<br><br>
@@ -40,7 +44,8 @@
 
 	<style>
 		.post_box {
-		    background: #fff;
+		    background: #000;
+			color: wheat;
 		    padding: 12px 0px 0px 12px;
 		    margin-top: 0px;
 		    margin-bottom: 8px;
@@ -98,6 +103,28 @@
 		    margin-right: 2px;
 		    outline: none;
 		    height: 42px;
+		}
+		body {
+		background-color: rgb(6,9,20);
+		color: white;
+		font-family: 'Work Sans', sans-serif;
+		}
+		textarea{
+			width: 80%;
+			background-color: rgb(6,9,20);
+			color: white;
+		}
+		h1, h2, h3, h4, h5, h6 {
+		font-family: 'Crimson Text', serif;
+		}
+		input, button{
+			cursor: pointer;
+			margin: 1%;
+			border: 0px;
+			background-color: #000f1f;
+			color: white;
+			height: 50px;
+			width: 25%;
 		}
 	</style>
     </div>

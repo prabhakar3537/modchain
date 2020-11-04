@@ -1,0 +1,72 @@
+cd "/mnt/d/STUDY/SEM 7/CIP/python_blockchain_app"
+
+ps -ef | grep python
+
+export FLASK_APP=node_server.py
+
+flask run --port 8000 &
+flask run --port 8001 &
+flask run --port 8002 &
+flask run --port 8003 &
+flask run --port 8004 &
+flask run --port 8005 &
+flask run --port 8006 &
+flask run --port 8007 &
+flask run --port 8008 &
+flask run --port 8009 &
+
+python run_app.py
+
+curl -X POST \
+  http://127.0.0.1:8000/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8001"}'
+
+
+
+
+
+curl -X POST \
+  http://127.0.0.1:8001/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8002/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8003/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8004/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8005/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8006/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8007/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8008/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8009/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'

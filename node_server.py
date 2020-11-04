@@ -5,22 +5,46 @@ from flask import Flask, request
 import requests
 import random
 import app.globals as globals
-
+import time
 leader_group = []
-
 def update_leader():
-    print("UPDATEEEEEEEEEEEEEEEEEE")
     with open('app/globals.json', 'r+') as f:
         data = json.load(f)
+        print("OLD LEADER: ")
         print(data['CURRENT_LEADER'])
-        data['CURRENT_LEADER'] = (data['CURRENT_LEADER']+1)%10
+        #data['CURRENT_LEADER'] = (data['CURRENT_LEADER']+1)%(globals.NUM)
+        data['CURRENT_LEADER'] = random.randint(0,9)
+        #Ignore lower trust score nodes
+        while(data['trust_score'][data["CURRENT_LEADER"]]<0):
+            data['CURRENT_LEADER'] = random.randint(0,9)
+        print("NEW LEADER: ")
         print(data['CURRENT_LEADER'])
         f.seek(0)     
         json.dump(data, f, indent=4)
         f.truncate() 
     return
 
-
+def update_leader_group():
+    with open('app/globals.json', 'r+') as f:
+        data = json.load(f)
+        leader_group = data['leader_group']
+        print("OLD LEADER GROUP: ")
+        print(leader_group)
+        with open('app/globals.json', 'r+') as f:
+            data = json.load(f)
+            if(data['CURRENT_LEADER'] in leader_group):
+                print(data['CURRENT_LEADER'])
+            else:
+                del leader_group[0]
+                leader_group.append(data["CURRENT_LEADER"])
+            print("LEADER GROUP: ")
+            print(leader_group)
+            f.seek(0)
+            data['leader_group'] = leader_group     
+            json.dump(data, f, indent=4)
+            f.truncate() 
+    return
+    
 class Block:
     def __init__(self, index, subblocks, timestamp, previous_hash, nonce=0):
         self.index = index
@@ -39,20 +63,22 @@ class Block:
 
 class Blockchain:
     # difficulty of our PoW algorithm
-    difficulty = 2
+    difficulty = 3
     def __init__(self):
-        global leader_group
-        for i in range(globals.group_size):
-            leader_group.append(i)
+        with open('app/globals.json', 'r+') as f:
+            data = json.load(f)
+            leader_group = data["leader_group"]
+            if len(leader_group)==0:
+                for i in range(globals.group_size):
+                    leader_group.append(i)
+            data['leader_group'] = leader_group
+            f.seek(0)     
+            json.dump(data, f, indent=4)
+            f.truncate() 
         self.unconfirmed_subblocks = []
         self.chain = []
 
     def create_genesis_block(self):
-        """
-        A function to generate genesis block and appends it to
-        the chain. The block has index 0, previous_hash as 0, and
-        a valid hash.
-        """
         genesis_block = Block(0, [], 0, "0")
         genesis_block.hash = genesis_block.compute_hash()
         self.chain.append(genesis_block)
@@ -147,7 +173,7 @@ class Blockchain:
         """
         if not self.unconfirmed_subblocks:
             return False
-
+        t0 = time.clock()
         last_block = self.last_block
 
         new_block = Block(index=last_block.index + 1,
@@ -157,7 +183,15 @@ class Blockchain:
 
         proof = self.proof_of_work(new_block)
         self.add_block(new_block, proof)
-
+        t1 = time.clock() - t0
+        with open('app/globals.json', 'r+') as f:
+            data = json.load(f)
+            time_mod = list(data['time_mod'] )
+            time_mod.append(t1)
+            data['time_mod'] = time_mod
+            f.seek(0)     
+            json.dump(data, f, indent=4)
+            f.truncate() 
         self.unconfirmed_subblocks = []
         return True
 
@@ -172,8 +206,7 @@ blockchain.create_genesis_block()
 peers = set()
 
 
-# endpoint to submit a new subblock. This will be used by
-# our application to add new data (posts) to the blockchain
+# endpoint to submit a new subblock. 
 @app.route('/new_subblock', methods=['POST'])
 def new_subblock():
     tx_data = request.get_json()
@@ -191,8 +224,6 @@ def new_subblock():
 
 
 # endpoint to return the node's copy of the chain.
-# Our application will be using this endpoint to query
-# all the posts to display.
 @app.route('/chain', methods=['GET'])
 def get_chain():
     chain_data = []
@@ -210,6 +241,7 @@ def get_chain():
 def mine_unconfirmed_subblocks():
     result = blockchain.mine()
     update_leader()
+    update_leader_group()
     if not result:
         return "No subblocks to mine?"
     else:
@@ -219,6 +251,7 @@ def mine_unconfirmed_subblocks():
         if chain_length == len(blockchain.chain):
             # announce the recently mined block to the network
             announce_new_block(blockchain.last_block)
+            
         return "Block #{} is mined.".format(blockchain.last_block.index)
 
 
@@ -315,14 +348,14 @@ def get_pending_tx():
 
 def consensus():
     """
-    Our naive consnsus algorithm. If a longer valid chain is
+    If a longer valid chain is
     found, our chain is replaced with it.
     """
     global blockchain
 
     longest_chain = None
     current_len = len(blockchain.chain)
-
+    """
     for node in peers:
         response = requests.get('{}chain'.format(node))
         length = response.json()['length']
@@ -330,11 +363,49 @@ def consensus():
         if length > current_len and blockchain.check_chain_validity(chain):
             current_len = length
             longest_chain = chain
+    """
+    leader_group_peers = []
+    leader_group = []
+    with open('app/globals.json', 'r+') as f:
+        data = json.load(f)
+        leader_group = data['leader_group']
+    for i in leader_group:
+        format_node = "http://127.0.0.1:"+str(8000+i)+"/"
+        leader_group_peers.append(format_node)
+    for node in leader_group_peers:
+        response = requests.get('{}chain'.format(node))
+        length = response.json()['length']
+        chain = response.json()['chain']
+        if length > current_len and blockchain.check_chain_validity(chain):
+            current_len = length
+            longest_chain = chain
+    """
+    """
 
     if longest_chain:
+        print("GOING IFFFFFFFFF")
         blockchain = longest_chain
+        #Decrease trust factor
+        with open('app/globals.json', 'r+') as f:
+            data = json.load(f)
+            trust_score = data['trust_score']
+            trust_score[data['CURRENT_LEADER']] -= 1
+            data["trust_score"] = trust_score
+            f.seek(0)     
+            json.dump(data, f, indent=4)
+            f.truncate() 
         return True
-
+    else:
+        #Increase trust factor
+        print("GOING ELSEEEEEEEEE")
+        with open('app/globals.json', 'r+') as f:
+            data = json.load(f)
+            trust_score = data['trust_score']
+            trust_score[data['CURRENT_LEADER']] += 1
+            data["trust_score"] = trust_score
+            f.seek(0)     
+            json.dump(data, f, indent=4)
+            f.truncate() 
     return False
 
 
@@ -351,5 +422,4 @@ def announce_new_block(block):
                       data=json.dumps(block.__dict__, sort_keys=True),
                       headers=headers)
 
-# Uncomment this line if you want to specify the port number in the code
 #app.run(debug=True, port=8000)

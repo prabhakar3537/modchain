@@ -16,7 +16,7 @@ LEADER_NODE = 8000
 posts = []
 
 def get_leader():
-    print("GET LEADERRRRRRRRRRRRR NEW AND IMPROVED")
+    #print("GET LEADERRRRRRRRRRRRR NEW AND IMPROVED")
     res = random.randint(0,9)
     with open('app/globals.json', 'r+') as f:
         data = json.load(f)
@@ -31,12 +31,13 @@ def fetch_posts():
     Function to fetch the chain from a blockchain node, parse the
     data and store it locally.
     """
-    print("Fetch posts function")
+    #print("Fetch posts function")
     global LEADER_NODE
     global it
     #it = (it+1)%10
     #print(it)
     CONNECTED_NODE_ADDRESS = LOCALHOST+str(LEADER_NODE+get_leader())
+    print("CONNECTED NODE ADDRESS: ")
     print(CONNECTED_NODE_ADDRESS)
     get_chain_address = "{}/chain".format(CONNECTED_NODE_ADDRESS)
     response = requests.get(get_chain_address)
