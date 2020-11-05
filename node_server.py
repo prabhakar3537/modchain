@@ -379,33 +379,33 @@ def consensus():
         if length > current_len and blockchain.check_chain_validity(chain):
             current_len = length
             longest_chain = chain
+        if longest_chain:
+            print("GOING IFFFFFFFFF")
+            blockchain = longest_chain
+            #Decrease trust factor
+            with open('app/globals.json', 'r+') as f:
+                data = json.load(f)
+                trust_score = data['trust_score']
+                trust_score[data['CURRENT_LEADER']] -= 1
+                data["trust_score"] = trust_score
+                f.seek(0)     
+                json.dump(data, f, indent=4)
+                f.truncate() 
+        else:
+            #Increase trust factor
+            print("GOING ELSEEEEEEEEE")
+            with open('app/globals.json', 'r+') as f:
+                data = json.load(f)
+                trust_score = data['trust_score']
+                trust_score[data['CURRENT_LEADER']] += 1
+                data["trust_score"] = trust_score
+                f.seek(0)     
+                json.dump(data, f, indent=4)
+                f.truncate() 
     """
     """
-
     if longest_chain:
-        print("GOING IFFFFFFFFF")
-        blockchain = longest_chain
-        #Decrease trust factor
-        with open('app/globals.json', 'r+') as f:
-            data = json.load(f)
-            trust_score = data['trust_score']
-            trust_score[data['CURRENT_LEADER']] -= 1
-            data["trust_score"] = trust_score
-            f.seek(0)     
-            json.dump(data, f, indent=4)
-            f.truncate() 
         return True
-    else:
-        #Increase trust factor
-        print("GOING ELSEEEEEEEEE")
-        with open('app/globals.json', 'r+') as f:
-            data = json.load(f)
-            trust_score = data['trust_score']
-            trust_score[data['CURRENT_LEADER']] += 1
-            data["trust_score"] = trust_score
-            f.seek(0)     
-            json.dump(data, f, indent=4)
-            f.truncate() 
     return False
 
 
