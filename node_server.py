@@ -7,6 +7,7 @@ import random
 import app.globals as globals
 import time
 leader_group = []
+#Leader election protocol
 def update_leader():
     with open('app/globals.json', 'r+') as f:
         data = json.load(f)
@@ -24,6 +25,7 @@ def update_leader():
         f.truncate() 
     return
 
+#Leader group selection protocol
 def update_leader_group():
     with open('app/globals.json', 'r+') as f:
         data = json.load(f)
@@ -63,7 +65,7 @@ class Block:
 
 class Blockchain:
     # difficulty of our PoW algorithm
-    difficulty = 3
+    difficulty = 0
     def __init__(self):
         with open('app/globals.json', 'r+') as f:
             data = json.load(f)
@@ -347,23 +349,9 @@ def get_pending_tx():
 
 
 def consensus():
-    """
-    If a longer valid chain is
-    found, our chain is replaced with it.
-    """
     global blockchain
-
     longest_chain = None
     current_len = len(blockchain.chain)
-    """
-    for node in peers:
-        response = requests.get('{}chain'.format(node))
-        length = response.json()['length']
-        chain = response.json()['chain']
-        if length > current_len and blockchain.check_chain_validity(chain):
-            current_len = length
-            longest_chain = chain
-    """
     leader_group_peers = []
     leader_group = []
     with open('app/globals.json', 'r+') as f:
@@ -380,7 +368,6 @@ def consensus():
             current_len = length
             longest_chain = chain
         if longest_chain:
-            print("GOING IFFFFFFFFF")
             blockchain = longest_chain
             #Decrease trust factor
             with open('app/globals.json', 'r+') as f:
@@ -393,7 +380,6 @@ def consensus():
                 f.truncate() 
         else:
             #Increase trust factor
-            print("GOING ELSEEEEEEEEE")
             with open('app/globals.json', 'r+') as f:
                 data = json.load(f)
                 trust_score = data['trust_score']
@@ -402,8 +388,6 @@ def consensus():
                 f.seek(0)     
                 json.dump(data, f, indent=4)
                 f.truncate() 
-    """
-    """
     if longest_chain:
         return True
     return False
