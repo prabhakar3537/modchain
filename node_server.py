@@ -13,7 +13,6 @@ def update_leader():
         data = json.load(f)
         print("OLD LEADER: ")
         print(data['CURRENT_LEADER'])
-        #data['CURRENT_LEADER'] = (data['CURRENT_LEADER']+1)%(globals.NUM)
         data['CURRENT_LEADER'] = random.randint(0,9)
         #Ignore lower trust score nodes
         while(data['trust_score'][data["CURRENT_LEADER"]]<0):
@@ -101,13 +100,6 @@ class Blockchain:
         return self.chain[-1]
 
     def add_block(self, block, proof):
-        """
-        A function that adds the block to the chain after verification.
-        Verification includes:
-        * Checking if the proof is valid.
-        * The previous_hash referred in the block and the hash of latest block
-          in the chain match.
-        """
         previous_hash = self.last_block.hash
 
         if previous_hash != block.previous_hash:
@@ -168,14 +160,9 @@ class Blockchain:
         return result
 
     def mine(self):
-        """
-        This function serves as an interface to add the pending
-        subblocks to the blockchain by adding them to the block
-        and figuring out Proof Of Work.
-        """
         if not self.unconfirmed_subblocks:
             return False
-        t0 = time.clock()
+        t0 = time.time()
         last_block = self.last_block
 
         new_block = Block(index=last_block.index + 1,
@@ -185,7 +172,7 @@ class Blockchain:
 
         proof = self.proof_of_work(new_block)
         self.add_block(new_block, proof)
-        t1 = time.clock() - t0
+        t1 = time.time() - t0
         with open('app/globals.json', 'r+') as f:
             data = json.load(f)
             time_mod = list(data['time_mod'] )
@@ -347,6 +334,61 @@ def verify_and_add_block():
 def get_pending_tx():
     return json.dumps(blockchain.unconfirmed_subblocks)
 
+def get_deposit():
+    print("GETTINGGGGGG DEPOSITTTTTTTT")
+    with open('app/globals.json', 'r+') as f:
+        data = json.load(f)
+        credit = data['credit']
+        current_leader = data['CURRENT_LEADER']
+        if(credit[current_leader]<data['DEPOSIT']):
+            return False
+        else:
+            credit[current_leader]=credit[current_leader]-data['DEPOSIT']
+            data['current_deposit'] = data['DEPOSIT']
+        data['credit'] = credit
+        f.seek(0)     
+        json.dump(data, f, indent=4)
+        f.truncate() 
+    return True
+
+def return_deposit():
+    with open('app/globals.json', 'r+') as f:
+        data = json.load(f)
+        credit = data['credit']
+        credit[data['CURRENT_LEADER']] += data['current_deposit']
+        data['current_deposit'] = 0
+        data['credit'] = credit
+        f.seek(0)     
+        json.dump(data, f, indent=4)
+        f.truncate() 
+
+def split_credit():
+    print("SPLITINGGGGGGG CREDITTTTTTTTT")
+    with open('app/globals.json', 'r+') as f:
+        data = json.load(f)
+        credit = data['credit']
+        split_up = data['current_deposit']/(data['NUM']-1)
+        data['current_deposit'] = 0
+        for i in range(data['NUM']):
+            if(i == data['CURRENT_LEADER']):
+                continue
+            credit[i]+=split_up
+        data['credit'] = credit
+        f.seek(0)     
+        json.dump(data, f, indent=4)
+        f.truncate() 
+
+def incentive():
+    print('INCENTIVEEEEEEEEEEEEEEEEEE')
+    with open('app/globals.json', 'r+') as f:
+        data = json.load(f)
+        credit = data['credit']
+        credit[data['CURRENT_LEADER']] += (0.1* data['DEPOSIT'])
+        data['credit'] = credit
+        f.seek(0)     
+        json.dump(data, f, indent=4)
+        f.truncate() 
+
 
 def consensus():
     global blockchain
@@ -354,6 +396,9 @@ def consensus():
     current_len = len(blockchain.chain)
     leader_group_peers = []
     leader_group = []
+    deposit = get_deposit()
+    if deposit == False:
+        return False
     with open('app/globals.json', 'r+') as f:
         data = json.load(f)
         leader_group = data['leader_group']
@@ -378,6 +423,7 @@ def consensus():
                 f.seek(0)     
                 json.dump(data, f, indent=4)
                 f.truncate() 
+            split_credit()
         else:
             #Increase trust factor
             with open('app/globals.json', 'r+') as f:
@@ -390,6 +436,8 @@ def consensus():
                 f.truncate() 
     if longest_chain:
         return True
+    return_deposit()
+    incentive()
     return False
 
 

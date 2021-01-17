@@ -14,7 +14,7 @@ x = []
 """
 with open('app/time_mod.json', 'r+') as f:
     data = json.load(f)
-    l = data['time_mod_50_50kb_difficulty0']
+    l = data['time_mod_25_1mb_difficulty0']
 for i in range(len(l)):
     x.append(i)
 
@@ -28,7 +28,7 @@ print(np.floor(1/np.average(arr)))
 print(1/np.average(arr))
 import matplotlib.pyplot as plt
 plt.plot(x, l)
-plt.xlabel("X-axis")
+plt.xlabel("Number of Transactions")
 plt.ylabel("Time taken for transaction (in seconds)")
 plt.show()
 #print(len(l))
