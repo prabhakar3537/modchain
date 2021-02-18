@@ -334,17 +334,37 @@ def verify_and_add_block():
 def get_pending_tx():
     return json.dumps(blockchain.unconfirmed_subblocks)
 
+def initialize_credit():
+    with open('app/globals.json', 'r+') as f:
+        data = json.load(f)
+        #initializing credit arrays
+        credit = []
+        size = data['NUM']
+        #Iterating for number of nodes
+        for i in range(size):
+            credit.append(data['initial_credit'])
+        #Copying the credit value to shared storage
+        data['credit'] = credit
+        f.seek(0)     
+        json.dump(data, f, indent=4)
+        f.truncate() 
+    return True       
+        
+
 def get_deposit():
-    print("GETTINGGGGGG DEPOSITTTTTTTT")
+    print("Getting deposit: ")
     with open('app/globals.json', 'r+') as f:
         data = json.load(f)
         credit = data['credit']
         current_leader = data['CURRENT_LEADER']
+        print("Current leader is: "+str(data['CURRENT_LEADER'])+" with credit of "+str(credit[data['CURRENT_LEADER']]))
         if(credit[current_leader]<data['DEPOSIT']):
             return False
         else:
+            print('Getting deposit of '+str(data['DEPOSIT'])+" from leader")
             credit[current_leader]=credit[current_leader]-data['DEPOSIT']
             data['current_deposit'] = data['DEPOSIT']
+            print("Credit after deposit: "+str(credit[current_leader]))
         data['credit'] = credit
         f.seek(0)     
         json.dump(data, f, indent=4)
@@ -353,6 +373,7 @@ def get_deposit():
 
 def return_deposit():
     with open('app/globals.json', 'r+') as f:
+        print('Deposit Returned after successful consensus')
         data = json.load(f)
         credit = data['credit']
         credit[data['CURRENT_LEADER']] += data['current_deposit']
@@ -363,7 +384,7 @@ def return_deposit():
         f.truncate() 
 
 def split_credit():
-    print("SPLITINGGGGGGG CREDITTTTTTTTT")
+    print("Consensus failed. Splitting credit between node committee")
     with open('app/globals.json', 'r+') as f:
         data = json.load(f)
         credit = data['credit']
@@ -379,7 +400,7 @@ def split_credit():
         f.truncate() 
 
 def incentive():
-    print('INCENTIVEEEEEEEEEEEEEEEEEE')
+    print('Adding Incentive')
     with open('app/globals.json', 'r+') as f:
         data = json.load(f)
         credit = data['credit']
@@ -389,6 +410,10 @@ def incentive():
         json.dump(data, f, indent=4)
         f.truncate() 
 
+#Auction Mechanism
+def start_bid():
+    print('Starting Auction For selection of new leader node')
+    return
 
 def consensus():
     global blockchain
