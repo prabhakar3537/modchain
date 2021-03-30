@@ -1,6 +1,21 @@
 <!-- extend base layout -->
 <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
+<script>
+function download(filename, text) {
+	filename="log";
+	text= document.getElementById("dev_id").value;
+	var element = document.createElement('a');
+	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+	element.setAttribute('download', filename);
 
+	element.style.display = 'none';
+	document.body.appendChild(element);
+
+	element.click();
+
+	document.body.removeChild(element);
+}
+</script>
 {% extends "base.html" %}
 
 {% block content %}
@@ -10,580 +25,1145 @@
 	<form action="/submit" id="textform" method="post">
 	    <textarea name="content" rows="4" cols="50" placeholder="Data from IOT Devices" maxlength="100000">
 			feature	Tauschii	7DS	AT7D6028	gene	0.000
-feature	Tauschii	7DS	AT7D6029	gene	0.000
-feature	Tauschii	7DS	AT7D6031	gene	0.500
-feature	Tauschii	7DS	AT7D6032	gene	0.500
-feature	Tauschii	7DS	AT7D6034	gene	0.500
-feature	Tauschii	7DS	BE425904	gene	0.500
-feature	Tauschii	7DS	AT7D6035	gene	0.910
-feature	Tauschii	7DS	AT7D6036	gene	1.733
-feature	Tauschii	7DS	AT7D6037	gene	1.915
-feature	Tauschii	7DS	AT7D6039	gene	5.031
-feature	Tauschii	7DS	AT7D6040	gene	6.099
-feature	Tauschii	7DS	AT7D6041	gene	6.145
-feature	Tauschii	7DS	AT7D6042	gene	9.724
-feature	Tauschii	7DS	AT7D6043	gene	9.915
-feature	Tauschii	7DS	AT7D6044	gene	11.392
-feature	Tauschii	7DS	AT7D6046	gene	16.615
-feature	Tauschii	7DS	AT7D6047	gene	16.933
-feature	Tauschii	7DS	AT7D6048	gene	16.933
-feature	Tauschii	7DS	AT7D6049	gene	19.005
-feature	Tauschii	7DS	AT7D6051	gene	19.096
-feature	Tauschii	7DS	AT7D6052	gene	19.143
-feature	Tauschii	7DS	AT7D6054	gene	21.862
-feature	Tauschii	7DS	AT7D6055	gene	23.234
-feature	Tauschii	7DS	AT7D6064	gene	25.515
-feature	Tauschii	7DS	AT7D6065	gene	27.777
-feature	Tauschii	7DS	AT7D6066	gene	27.823
-feature	Tauschii	7DS	AT7D6067	gene	28.236
-feature	Tauschii	7DS	AT7D6068	gene	28.281
-feature	Tauschii	7DS	AT7D6070	gene	30.041
-feature	Tauschii	7DS	AT7D6071	gene	31.656
-feature	Tauschii	7DS	AT7D6072	gene	31.747
-feature	Tauschii	7DS	AT7D6073	gene	32.892
-feature	Tauschii	7DS	AT7D6074	gene	33.031
-feature	Tauschii	7DS	AT7D6075	gene	33.215
-feature	Tauschii	7DS	AT7D6076	gene	33.899
-feature	Tauschii	7DS	AT7D6077	gene	34.265
-feature	Tauschii	7DS	AT7D6078	gene	37.147
-feature	Tauschii	7DS	AT7D6079	gene	37.788
-feature	Tauschii	7DS	AT7D6080	gene	37.879
-feature	Tauschii	7DS	AT7D6081	gene	37.971
-feature	Tauschii	7DS	AT7D6082	gene	38.381
-feature	Tauschii	7DS	AT7D6083	gene	38.426
-feature	Tauschii	7DS	AT7D6085	gene	39.798
-feature	Tauschii	7DS	AT7D6086	gene	39.798
-feature	Tauschii	7DS	AT7D6087	gene	39.798
-feature	Tauschii	7DS	AT7D6090	gene	41.445
-feature	Tauschii	7DS	AT7D6091	gene	43.279
-feature	Tauschii	7DS	AT7D6092	gene	44.192
-feature	Tauschii	7DS	AT7D6094	gene	44.374
-feature	Tauschii	7DS	AT7D6095	gene	44.374
-feature	Tauschii	7DS	AT7D6096	gene	44.374
-feature	Tauschii	7DS	AT7D6097	gene	44.783
-feature	Tauschii	7DS	AT7D6098	gene	44.783
-feature	Tauschii	7DS	AT7D6101	gene	45.926
-feature	Tauschii	7DS	AT7D6102	gene	45.926
-feature	Tauschii	7DS	AT7D6103	gene	46.564
-feature	Tauschii	7DS	AT7D6104	gene	46.609
-feature	Tauschii	7DS	AT7D6105	gene	46.882
-feature	Tauschii	7DS	AT7D6106	gene	46.882
-feature	Tauschii	7DS	AT7D6107	gene	47.018
-feature	Tauschii	7DS	AT7D6109	gene	47.247
-feature	Tauschii	7DS	AT7D6110	gene	47.511
-feature	Tauschii	7DS	AT7D6111	gene	47.657
-feature	Tauschii	7DS	AT7D6112	gene	47.702
-feature	Tauschii	7DS	AT7D6113	gene	48.569
-feature	Tauschii	7DS	AT7D6114	gene	48.660
-feature	Tauschii	7DS	AT7D6115	gene	48.705
-feature	Tauschii	7DS	AT7D6116	gene	48.705
-feature	Tauschii	7DS	AT7D6117	gene	48.887
-feature	Tauschii	7DS	AT7D6118	gene	51.044
-feature	Tauschii	7DS	AT7D6119	gene	51.090
-feature	Tauschii	7DS	AT7D6120	gene	51.090
-feature	Tauschii	7DS	AT7D6122	gene	51.408
-feature	Tauschii	7DS	AT7D6121	gene	51.408
-feature	Tauschii	7DS	AT7D6123	gene	51.863
-feature	Tauschii	7DS	AT7D6125	gene	53.658
-feature	Tauschii	7DS	AT7D6126	gene	53.886
-feature	Tauschii	7DS	AT7D6128	gene	54.523
-feature	Tauschii	7DS	AT7D6129	gene	55.297
-feature	Tauschii	7DS	AT7D6130	gene	55.388
-feature	Tauschii	7DS	AT7D6131	gene	55.433
-feature	Tauschii	7DS	AT7D6132	gene	55.707
-feature	Tauschii	7DS	AT7D6133	gene	56.575
-feature	Tauschii	7DS	AT7D6134	gene	57.396
-feature	Tauschii	7DS	AT7D6139	gene	59.218
-feature	Tauschii	7DS	BG607523	gene	59.218
-feature	Tauschii	7DS	BF145272	gene	59.627
-feature	Tauschii	7DS	AT7D6144	gene	60.857
-feature	Tauschii	7DS	AT7D6145	gene	63.203
-feature	Tauschii	7DS	AT7D6146	gene	63.339
-feature	Tauschii	7DS	AT7D6147	gene	63.566
-feature	Tauschii	7DS	AT7D6148	gene	64.582
-feature	Tauschii	7DS	AT7D6149	gene	64.582
-feature	Tauschii	7DS	AT7D6151	gene	64.812
-feature	Tauschii	7DS	AT7D6152	gene	64.812
-feature	Tauschii	7DS	AT7D6153	gene	64.902
-feature	Tauschii	7DS	AT7D6154	gene	64.993
-feature	Tauschii	7DS	AT7D6155	gene	65.084
-feature	Tauschii	7DS	AT7D6161	gene	65.666
-feature	Tauschii	7DS	AT7D6156	gene	65.722
-feature	Tauschii	7DS	AT7D6158	gene	68.393
-feature	Tauschii	7DS	AT7D6163	gene	69.169
-feature	Tauschii	7DS	AT7D6165	gene	69.352
-feature	Tauschii	7DS	AT7D6166	gene	69.352
-feature	Tauschii	7DS	AT7D6167	gene	69.398
-feature	Tauschii	7DS	AT7D6168	gene	69.761
-feature	Tauschii	7DS	AT7D6169	gene	69.898
-feature	Tauschii	7DS	AT7D6170	gene	70.079
-feature	Tauschii	7DS	AT7D6171	gene	70.079
-feature	Tauschii	7DS	AT7D6173	gene	71.628
-feature	Tauschii	7DS	AT7D6175	gene	72.128
-feature	Tauschii	7DS	AT7D6176	gene	72.128
-feature	Tauschii	7DS	AT7D6178	gene	72.401
-feature	Tauschii	7DS	AT7D6179	gene	72.538
-feature	Tauschii	7DS	AT7D6180	gene	72.811
-feature	Tauschii	7DS	AT7D6184	gene	75.676
-feature	Tauschii	7DS	AT7D6185	gene	75.676
-feature	Tauschii	7DS	AT7D6182	gene	75.676
-feature	Tauschii	7DS	AT7D6183	gene	75.676
-feature	Tauschii	7DS	AT7D6186	gene	76.223
-feature	Tauschii	7DS	AT7D6187	gene	76.223
-feature	Tauschii	7DS	AT7D6188	gene	76.404
-feature	Tauschii	7DS	AT7D6189	gene	76.404
-feature	Tauschii	7DS	AT7D6190	gene	76.404
-feature	Tauschii	7DS	BE445587	gene	78.516
-feature	Tauschii	7DS	AT7D6195	gene	79.107
-feature	Tauschii	7DS	AT7D6196	gene	79.246
-feature	Tauschii	7DS	AT7D6197	gene	79.524
-feature	Tauschii	7DS	AT7D6201	gene	80.903
-feature	Tauschii	7DS	AT7D6204	gene	80.948
-feature	Tauschii	7DS	AT7D6206	gene	81.175
-feature	Tauschii	7DS	AT7D6207	gene	81.175
-feature	Tauschii	7DS	BE499248	gene	81.175
-feature	Tauschii	7DS	AT7D6208	gene	81.266
-feature	Tauschii	7DS	AT7D6210	gene	81.812
-feature	Tauschii	7DS	AT7D6212	gene	81.812
-feature	Tauschii	7DS	BG274948	gene	81.812
-feature	Tauschii	7DS	AT7D6214	gene	81.812
-feature	Tauschii	7DS	AT7D6209	gene	81.812
-feature	Tauschii	7DS	AT7D6216	gene	81.858
-feature	Tauschii	7DS	AT7D6217	gene	81.858
-feature	Tauschii	7DS	AT7D6218	gene	82.085
-feature	Tauschii	7DS	AT7D6219	gene	82.312
-feature	Tauschii	7DS	AT7D6220	gene	82.312
-feature	Tauschii	7DS	AT7D6222	gene	82.721
-feature	Tauschii	7DS	AT7D6223	gene	83.496
-feature	Tauschii	7DS	AT7D6224	gene	83.769
-feature	Tauschii	7DS	AT7D6225	gene	83.905
-feature	Tauschii	7DS	AT7D6226	gene	83.950
-feature	Tauschii	7DS	AT7D6227	gene	84.087
-feature	Tauschii	7DS	AT7D6229	gene	86.007
-feature	Tauschii	7DS	AT7D6230	gene	87.381
-feature	Tauschii	7DS	AT7D6231	gene	87.654
-feature	Tauschii	7DS	AT7D6233	gene	87.699
-feature	Tauschii	7DS	AT7D6234	gene	87.836
-feature	Tauschii	7DS	AT7D6235	gene	87.836
-feature	Tauschii	7DS	AT7D6236	gene	87.973
-feature	Tauschii	7DS	AT7D6237	gene	88.019
-feature	Tauschii	7DS	AT7D6238	gene	88.109
-feature	Tauschii	7DS	AT7D6239	gene	88.109
-feature	Tauschii	7DS	AT7D6240	gene	88.109
-feature	Tauschii	7DS	AT7D6241	gene	88.155
-feature	Tauschii	7DS	AT7D6242	gene	88.155
-feature	Tauschii	7DS	AT7D6243	gene	88.655
-feature	Tauschii	7DS	AT7D6246	gene	88.701
-feature	Tauschii	7DS	AT7D6247	gene	89.202
-feature	Tauschii	7DS	AT7D6249	gene	90.253
-feature	Tauschii	7DS	AT7D6250	gene	90.662
-feature	Tauschii	7DS	AT7D6253	gene	90.936
-feature	Tauschii	7DS	AT7D6251	gene	90.936
-feature	Tauschii	7DS	AT7D6252	gene	90.936
-feature	Tauschii	7DS	AT7D6255	gene	91.072
-feature	Tauschii	7DS	AT7D6256	gene	91.300
-feature	Tauschii	7DS	AT7D6258	gene	91.345
-feature	Tauschii	7DS	AT7D6259	gene	91.572
-feature	Tauschii	7DS	AT7D6260	gene	92.073
-feature	Tauschii	7DS	AT7D6262	gene	92.209
-feature	Tauschii	7DS	AT7D6263	gene	92.300
-feature	Tauschii	7DS	AT7D6270	gene	93.073
-feature	Tauschii	7DS	BF293371	gene	93.118
-feature	Tauschii	7DS	AT7D6272	gene	93.163
-feature	Tauschii	7DS	AT7D6276	gene	94.123
-feature	Tauschii	7DS	AT7D6278	gene	94.169
-feature	Tauschii	7DS	AT7D6279	gene	94.169
-feature	Tauschii	7DS	BE495325	gene	94.169
-feature	Tauschii	7DS	AT7D6281	gene	94.942
-feature	Tauschii	7DS	AT7D6282	gene	95.169
-feature	Tauschii	7DS	BF473138	gene	95.350
-feature	Tauschii	7DS	AT7D6284	gene	95.487
-feature	Tauschii	7DS	AT7D6287	gene	95.759
-feature	Tauschii	7DS	AT7D6289	gene	96.396
-feature	Tauschii	7DS	AT7D6292	gene	96.533
-feature	Tauschii	7DS	AT7D6291	gene	96.533
-feature	Tauschii	7DS	AT7D6290	gene	96.533
-feature	Tauschii	7DS	AT7D6293	gene	96.897
-feature	Tauschii	7DS	AT7D6294	gene	96.987
-feature	Tauschii	7DS	AT7D6298	gene	97.487
-feature	Tauschii	7DS	AT7D6297	gene	97.487
-feature	Tauschii	7DS	BE590476	gene	97.851
-feature	Tauschii	7DS	AT7D6308	gene	97.896
-feature	Tauschii	7DS	BF473825	gene	97.896
-feature	Tauschii	7DS	AT7D6309	gene	97.896
-feature	Tauschii	7DS	AT7D6315	gene	98.078
-feature	Tauschii	7DS	AT7D6314	gene	98.078
-feature	Tauschii	7DS	AT7D6316	gene	98.078
-feature	Tauschii	7DS	AT7D6311	gene	98.078
-feature	Tauschii	7DS	AT7D6313	gene	98.078
-feature	Tauschii	7DS	AT7D6310	gene	98.078
-feature	Tauschii	7DS	AT7D6317	gene	98.078
-feature	Tauschii	7DS	AT7D6318	gene	98.123
-feature	Tauschii	7DS	AT7D6319	gene	98.169
-feature	Tauschii	7DS	AT7D6321	gene	98.457
-feature	Tauschii	7DS	AT7D6322	gene	98.507
-feature	Tauschii	7DS	AT7D6324	gene	98.779
-feature	Tauschii	7DS	AT7D6325	gene	98.779
-feature	Tauschii	7DS	AT7D6326	gene	98.779
-feature	Tauschii	7DS	AT7D6323	gene	98.779
-feature	Tauschii	7DS	AT7D6327	gene	98.916
-feature	Tauschii	7DS	AT7D6328	gene	98.916
-feature	Tauschii	7DS	AT7D6329	gene	100.104
-feature	Tauschii	7DS	AT7D6333	gene	100.467
-feature	Tauschii	7DS	AT7D6334	gene	100.558
-feature	Tauschii	7DS	AT7D6340	gene	100.876
-feature	Tauschii	7DS	AT7D6343	gene	100.876
-feature	Tauschii	7DS	AT7D6337	gene	100.876
-feature	Tauschii	7DS	AT7D6341	gene	100.876
-feature	Tauschii	7DS	AT7D6338	gene	100.876
-feature	Tauschii	7DS	AT7D6345	gene	101.331
-feature	Tauschii	7DS	AT7D6346	gene	101.331
-feature	Tauschii	7DS	AT7D6348	gene	101.422
-feature	Tauschii	7DS	AT7D6350	gene	101.422
-feature	Tauschii	7DS	BE493965	gene	101.422
-feature	Tauschii	7DS	AT7D6349	gene	101.422
-feature	Tauschii	7DS	AT7D6353	gene	101.467
-feature	Tauschii	7DS	AT7D6354	gene	101.467
-feature	Tauschii	7DS	AT7D6355	gene	101.467
-feature	Tauschii	7DS	AT7D6358	gene	101.467
-feature	Tauschii	7DS	AT7D6357	gene	101.467
-feature	Tauschii	7DS	AT7D6360	gene	101.513
-feature	Tauschii	7DS	AT7D6361	gene	101.604
-feature	Tauschii	7DS	AT7D6363	gene	101.740
-feature	Tauschii	7DS	AT7D6365	gene	101.740
-feature	Tauschii	7DS	AT7D6367	gene	101.740
-feature	Tauschii	7DS	BE443596	gene	101.740
-feature	Tauschii	7DS	BE591002	gene	101.740
-feature	Tauschii	7DS	CD452629	gene	101.740
-feature	Tauschii	7DS	AT7D6368	gene	101.967
-feature	Tauschii	7DS	AT7D6369	gene	104.128
-feature	Tauschii	7DS	AT7D6370	gene	105.363
-feature	Tauschii	7DS	AT7D6371	gene	105.727
-feature	Tauschii	7DS	AT7D6372	gene	105.727
-feature	Tauschii	7DS	AT7D6373	gene	105.863
-feature	Tauschii	7DS	AT7D6374	gene	105.863
-feature	Tauschii	7DS	AT7D6375	gene	105.909
-feature	Tauschii	7DS	AT7D6376	gene	105.909
-feature	Tauschii	7DS	AT7D6377	gene	105.954
-feature	Tauschii	7DS	AT7D6378	gene	106.182
-feature	Tauschii	7DS	AT7D6381	gene	106.501
-feature	Tauschii	7DS	AT7D6382	gene	106.501
-feature	Tauschii	7DS	AT7D6384	gene	106.728
-feature	Tauschii	7DS	AT7D6385	gene	106.728
-feature	Tauschii	7DS	AT7D6387	gene	107.183
-feature	Tauschii	7DS	AT7D6389	gene	107.319
-feature	Tauschii	7DS	AT7D6390	gene	107.409
-feature	Tauschii	7DS	AT7D6391	gene	107.409
-feature	Tauschii	7DS	AT7D6392	gene	107.409
-feature	Tauschii	7DS	AT7D6393	gene	107.409
-feature	Tauschii	7DS	AT7D6394	gene	107.409
-feature	Tauschii	7DS	AT7D6395	gene	107.773
-feature	Tauschii	7DS	AT7D6399	gene	108.046
-feature	Tauschii	7DS	AT7D6412	gene	108.046
-feature	Tauschii	7DS	AT7D6397	gene	108.046
-feature	Tauschii	7DS	AT7D6400	gene	108.046
-feature	Tauschii	7DS	AT7D6406	gene	108.046
-feature	Tauschii	7DS	AT7D6408	gene	108.046
-feature	Tauschii	7DS	AT7D6411	gene	108.046
-feature	Tauschii	7DS	CD452949	gene	108.046
-feature	Tauschii	7DS	AT7D6413	gene	108.136
-feature	Tauschii	7DS	AT7D6414	gene	108.136
-feature	Tauschii	7DS	AT7D6415	gene	108.136
-feature	Tauschii	7DS	AT7D6417	gene	108.182
-feature	Tauschii	7DS	AT7D6418	gene	108.545
-feature	Tauschii	7DS	AT7D6420	gene	108.591
-feature	Tauschii	7DS	AT7D6423	gene	108.591
-feature	Tauschii	7DS	AT7D6419	gene	108.591
-feature	Tauschii	7DS	AT7D6421	gene	108.591
-feature	Tauschii	7DS	AT7D6422	gene	108.591
-feature	Tauschii	7DS	AT7D6426	gene	108.591
-feature	Tauschii	7DS	BE443936	gene	108.591
-feature	Tauschii	7DS	BQ161433	gene	108.591
-feature	Tauschii	7DS	AT7D6427	gene	108.636
-feature	Tauschii	7DS	AT7D6428	gene	108.636
-feature	Tauschii	7DS	AT7D6429	gene	109.365
-feature	Tauschii	7DS	AT7D6430	gene	109.683
-feature	Tauschii	7DS	AT7D6431	gene	110.139
-feature	Tauschii	7DS	AT7D6432	gene	110.185
-feature	Tauschii	7DS	AT7D6433	gene	110.185
-feature	Tauschii	7DS	AT7D6434	gene	110.185
-feature	Tauschii	7DS	AT7D6435	gene	110.185
-feature	Tauschii	7DS	AT7D6437	gene	110.276
-feature	Tauschii	7DS	AT7D6436	gene	110.276
-feature	Tauschii	7DS	AT7D6438	gene	110.367
-feature	Tauschii	7DS	AT7D6439	gene	110.549
-feature	Tauschii	7DS	AT7D6440	gene	110.594
-feature	Tauschii	7DS	AT7D6441	gene	110.640
-feature	Tauschii	7DS	AT7D6444	gene	110.867
-feature	Tauschii	7DS	AT7D6443	gene	110.867
-feature	Tauschii	7DS	BE498662	gene	110.867
-feature	Tauschii	7DS	AT7D6449	gene	110.913
-feature	Tauschii	7DS	AT7D6448	gene	110.913
-feature	Tauschii	7DS	AT7D6450	gene	110.913
-feature	Tauschii	7DS	AT7D6453	gene	111.095
-feature	Tauschii	7DS	AT7D6452	gene	111.095
-feature	Tauschii	7DS	AT7D6455	gene	111.140
-feature	Tauschii	7DS	AT7D6458	gene	111.276
-feature	Tauschii	7DS	AT7D6465	gene	111.373
-feature	Tauschii	7DS	AT7D6466	gene	111.373
-feature	Tauschii	7DS	AT7D6459	gene	111.373
-feature	Tauschii	7DS	AT7D6460	gene	111.373
-feature	Tauschii	7DS	AT7D6461	gene	111.373
-feature	Tauschii	7DS	AT7D6462	gene	111.373
-feature	Tauschii	7DS	AT7D6463	gene	111.373
-feature	Tauschii	7DS	AT7D6464	gene	111.373
-feature	Tauschii	7DS	AT7D6467	gene	111.469
-feature	Tauschii	7DS	AT7D6469	gene	111.515
-feature	Tauschii	7DS	BF201699	gene	111.560
-feature	Tauschii	7DS	AT7D6471	gene	111.651
-feature	Tauschii	7DS	AT7D6474	gene	111.696
-feature	Tauschii	7DS	AT7D6475	gene	111.742
-feature	Tauschii	7DS	BE426692	gene	111.742
-feature	Tauschii	7DS	AT7D6478	gene	111.742
-feature	Tauschii	7DS	AT7D6481	gene	111.742
-feature	Tauschii	7DS	AT7D6482	gene	111.742
-feature	Tauschii	7DS	AT7D6486	gene	111.742
-feature	Tauschii	7DS	BE443572	gene	111.742
-feature	Tauschii	7DS	BE497245	gene	111.742
-feature	Tauschii	7DS	BQ168298	gene	111.742
-feature	Tauschii	7DS	AT7D6485	gene	111.742
-feature	Tauschii	7DS	AT7D6487	gene	111.878
-feature	Tauschii	7DS	AT7D6489	gene	111.969
-feature	Tauschii	7DS	AT7D6488	gene	111.969
-feature	Tauschii	7DS	AT7D6494	gene	112.060
-feature	Tauschii	7DS	AT7D6497	gene	112.196
-feature	Tauschii	7DS	AT7D6498	gene	112.242
-feature	Tauschii	7DS	AT7D6499	gene	112.242
-feature	Tauschii	7DS	AT7D6500	gene	112.242
-feature	Tauschii	7DS	AT7D6505	gene	112.332
-feature	Tauschii	7DS	AT7D6509	gene	112.332
-feature	Tauschii	7DS	BF474966	gene	112.332
-feature	Tauschii	7DS	AT7D6506	gene	112.332
-feature	Tauschii	7DS	AT7D6502	gene	112.332
-feature	Tauschii	7DS	AT7D6507	gene	112.332
-feature	Tauschii	7DS	BE490219	gene	112.332
-feature	Tauschii	7DS	AT7D6510	gene	112.378
-feature	Tauschii	7DS	AT7D6516	gene	112.378
-feature	Tauschii	7DS	AT7D6520	gene	112.378
-feature	Tauschii	7DS	AT7D6524	gene	112.378
-feature	Tauschii	7DS	AT7D6519	gene	112.378
-feature	Tauschii	7DS	AT7D6517	gene	112.378
-feature	Tauschii	7DS	AT7D6514	gene	112.378
-feature	Tauschii	7DS	AT7D6511	gene	112.378
-feature	Tauschii	7DS	AT7D6526	gene	112.742
-feature	Tauschii	7DS	AT7D6527	gene	112.742
-feature	Tauschii	7DS	AT7D6535	gene	112.742
-feature	Tauschii	7DS	AT7D6534	gene	112.742
-feature	Tauschii	7DS	AT7D6528	gene	112.742
-feature	Tauschii	7DS	AT7D6531	gene	112.742
-feature	Tauschii	7DS	AT7D6532	gene	112.742
-feature	Tauschii	7DS	AT7D6533	gene	112.742
-feature	Tauschii	7DS	AT7D6529	gene	112.742
-feature	Tauschii	7DS	AT7D6536	gene	112.787
-feature	Tauschii	7DS	AT7D6537	gene	112.787
-feature	Tauschii	7DS	AT7D6542	gene	112.924
-feature	Tauschii	7DS	BE471272	gene	112.924
-feature	Tauschii	7DS	AT7D6550	gene	113.014
-feature	Tauschii	7DS	AT7D6547	gene	113.014
-feature	Tauschii	7DS	AT7D6551	gene	113.014
-feature	Tauschii	7DS	BE404728	gene	113.014
-feature	Tauschii	7DS	BE446359	gene	113.014
-feature	Tauschii	7DS	AT7D6545	gene	113.014
-feature	Tauschii	7DS	AT7D6552	gene	113.060
-feature	Tauschii	7DS	AT7D6553	gene	113.060
-feature	Tauschii	7DS	AT7D6555	gene	113.060
-feature	Tauschii	7DS	AT7D6556	gene	113.060
-feature	Tauschii	7DS	BF291338	gene	113.060
-feature	Tauschii	7DS	AT7D6561	gene	113.105
-feature	Tauschii	7DS	AT7D6557	gene	113.105
-feature	Tauschii	7DS	AT7D6562	gene	113.105
-feature	Tauschii	7DS	BE443554	gene	113.105
-feature	Tauschii	7DS	BE586072	gene	113.105
-feature	Tauschii	7DS	AT7D6558	gene	113.105
-feature	Tauschii	7DS	AT7D6567	gene	113.151
-feature	Tauschii	7DS	AT7D6569	gene	113.151
-feature	Tauschii	7DS	BE499622	gene	113.151
-feature	Tauschii	7DS	AT7D6564	gene	113.151
-feature	Tauschii	7DS	BE591737	gene	113.151
-feature	Tauschii	7DS	AT7D6571	gene	113.196
-feature	Tauschii	7DS	AT7D6572	gene	113.880
-feature	Tauschii	7DS	AT7D6574	gene	114.472
-feature	Tauschii	7DS	AT7D6573	gene	114.472
-feature	Tauschii	7DS	AT7D6575	gene	114.472
-feature	Tauschii	7DS	AT7D6654	gene	114.563
-feature	Tauschii	7DS	AT7D6612	gene	114.563
-feature	Tauschii	7DS	AT7D6640	gene	114.563
-feature	Tauschii	7DS	AT7D6650	gene	114.563
-feature	Tauschii	7DS	AT7D6651	gene	114.563
-feature	Tauschii	7DS	AT7D6655	gene	114.563
-feature	Tauschii	7DS	AT7D6660	gene	114.563
-feature	Tauschii	7DS	AT7D6648	gene	114.563
-feature	Tauschii	7DS	AT7D6601	gene	114.563
-feature	Tauschii	7DS	AT7D6599	gene	114.563
-feature	Tauschii	7DS	AT7D6602	gene	114.563
-feature	Tauschii	7DS	AT7D6603	gene	114.563
-feature	Tauschii	7DS	AT7D6608	gene	114.563
-feature	Tauschii	7DS	AT7D6610	gene	114.563
-feature	Tauschii	7DS	AT7D6604	gene	114.563
-feature	Tauschii	7DS	AT7D6656	gene	114.563
-feature	Tauschii	7DS	AT7D6585	gene	114.563
-feature	Tauschii	7DS	AT7D6658	gene	114.563
-feature	Tauschii	7DS	AT7D6634	gene	114.563
-feature	Tauschii	7DS	AT7D6606	gene	114.563
-feature	Tauschii	7DS	AT7D6620	gene	114.563
-feature	Tauschii	7DS	AT7D6643	gene	114.563
-feature	Tauschii	7DS	AT7D6659	gene	114.563
-feature	Tauschii	7DS	AT7D6653	gene	114.563
-feature	Tauschii	7DS	AT7D6621	gene	114.563
-feature	Tauschii	7DS	AT7D6642	gene	114.563
-feature	Tauschii	7DS	AT7D6591	gene	114.563
-feature	Tauschii	7DS	AT7D6616	gene	114.563
-feature	Tauschii	7DS	AT7D6635	gene	114.563
-feature	Tauschii	7DS	AT7D6657	gene	114.563
-feature	Tauschii	7DS	BF482692	gene	114.563
-feature	Tauschii	7DS	AT7D6597	gene	114.563
-feature	Tauschii	7DS	AT7D6589	gene	114.563
-feature	Tauschii	7DS	AT7D6633	gene	114.563
-feature	Tauschii	7DS	AT7D6631	gene	114.563
-feature	Tauschii	7DS	AT7D6644	gene	114.563
-feature	Tauschii	7DS	AT7D6647	gene	114.563
-feature	Tauschii	7DS	CD452455	gene	114.563
-feature	Tauschii	7DS	AT7D6639	gene	114.563
-feature	Tauschii	7DS	AT7D6594	gene	114.563
-feature	Tauschii	7DS	AT7D6588	gene	114.563
-feature	Tauschii	7DS	AT7D6590	gene	114.563
-feature	Tauschii	7DS	AT7D6577	gene	114.563
-feature	Tauschii	7DS	BF291735	gene	114.563
-feature	Tauschii	7DS	AT7D6576	gene	114.563
-feature	Tauschii	7DS	AT7D6581	gene	114.563
-feature	Tauschii	7DS	AT7D6578	gene	114.563
-feature	Tauschii	7DS	AT7D6626	gene	114.563
-feature	Tauschii	7DS	AT7D6583	gene	114.563
-feature	Tauschii	7DS	AT7D6613	gene	114.563
-feature	Tauschii	7DS	BE398591	gene	114.563
-feature	Tauschii	7DS	BE590582	gene	114.563
-feature	Tauschii	7DS	AT7D6615	gene	114.563
-feature	Tauschii	7DS	AT7D6662	gene	114.563
-feature	Tauschii	7DS	AT7D6587	gene	114.563
-feature	Tauschii	7DS	AT7D6619	gene	114.563
-feature	Tauschii	7DS	BE424174	gene	114.563
-feature	Tauschii	7DS	BE500122	gene	114.563
-feature	Tauschii	7DS	BQ167588	gene	114.563
-feature	DArTseq	7DS	7D_1137006	gene	0
-feature	DArTseq	7DS	7D_1032620	gene	0.08235
-feature	DArTseq	7DS	7D_1043924	gene	0.08235
-feature	DArTseq	7DS	7D_1045226	gene	0.08235
-feature	DArTseq	7DS	7D_2322316	gene	0.08235
-feature	DArTseq	7DS	7D_979471	gene	0.08235
-feature	DArTseq	7DS	7D_1008326	gene	0.08235
-feature	DArTseq	7DS	7D_978539	gene	0.08235
-feature	DArTseq	7DS	7D_1233053	gene	0.08235
-feature	DArTseq	7DS	7D_1054742	gene	0.08235
-feature	DArTseq	7DS	7D_1393841	gene	0.08235
-feature	DArTseq	7DS	7D_1057834	gene	0.09359
-feature	DArTseq	7DS	7D_2252071	gene	0.09359
-feature	DArTseq	7DS	7D_2245244	gene	0.10065
-feature	DArTseq	7DS	7D_1049618	gene	0.1273
-feature	DArTseq	7DS	7D_1054974	gene	0.1273
-feature	DArTseq	7DS	7D_983331	gene	0.1273
-feature	DArTseq	7DS	7D_1126353	gene	0.13292
-feature	DArTseq	7DS	7D_984165	gene	0.13854
-feature	DArTseq	7DS	7D_1076041	gene	0.13854
-feature	DArTseq	7DS	7D_1102374	gene	0.13854
-feature	DArTseq	7DS	7D_2256448	gene	0.13854
-feature	DArTseq	7DS	7D_1252266	gene	0.15003
-feature	DArTseq	7DS	7D_1699107	gene	0.15003
-feature	DArTseq	7DS	7D_2245640	gene	0.15003
-feature	DArTseq	7DS	7D_1125545	gene	0.158978
-feature	DArTseq	7DS	7D_1234950	gene	0.16166
-feature	DArTseq	7DS	7D_1254829	gene	0.16166
-feature	DArTseq	7DS	7D_983470	gene	0.16166
-feature	DArTseq	7DS	7D_1228132	gene	0.16761
-feature	DArTseq	7DS	7D_1047674	gene	0.169091
-feature	DArTseq	7DS	7D_1138898	gene	0.17356
-feature	DArTseq	7DS	7D_1267060	gene	0.17356
-feature	DArTseq	7DS	7D_1232977	gene	0.17356
-feature	DArTseq	7DS	7D_1090577	gene	0.17356
-feature	DArTseq	7DS	7D_1233195	gene	0.17356
-feature	DArTseq	7DS	7D_1244962	gene	0.17356
-feature	DArTseq	7DS	7D_1118537	gene	0.187081471
-feature	DArTseq	7DS	7D_1035864	gene	0.19578
-feature	DArTseq	7DS	7D_1054857	gene	0.19578
-feature	DArTseq	7DS	7D_1260083	gene	0.19578
-feature	DArTseq	7DS	7D_2250296	gene	0.19578
-feature	DArTseq	7DS	7D_2247396	gene	0.19578
-feature	DArTseq	7DS	7D_2243521	gene	0.20025
-feature	DArTseq	7DS	7D_1102395	gene	0.212751
-feature	DArTseq	7DS	7D_2245098	gene	0.212751
-feature	DArTseq	7DS	7D_1118256	gene	0.227069211
-feature	DArTseq	7DS	7D_1252846	gene	0.227069211
-feature	DArTseq	7DS	7D_1255379	gene	0.227069211
-feature	DArTseq	7DS	7D_1202848	gene	0.227069211
-feature	DArTseq	7DS	7D_1117501	gene	0.227069211
-feature	DArTseq	7DS	7D_1139026	gene	0.227069211
-feature	DArTseq	7DS	7D_1128062	gene	0.227069211
-feature	DArTseq	7DS	7D_1094096	gene	0.227069211
-feature	DArTseq	7DS	7D_1219642	gene	0.228534615
-feature	DArTseq	7DS	7D_1713495	gene	0.23192
-feature	DArTseq	7DS	7D_1041387	gene	0.23192
-feature	DArTseq	7DS	7D_1030549	gene	0.23192
-feature	DArTseq	7DS	7D_1681261	gene	0.237662946
-feature	DArTseq	7DS	7D_1073523	gene	0.241001471
-feature	DArTseq	7DS	7D_1074360	gene	0.241001471
-feature	DArTseq	7DS	7D_1092977	gene	0.241001471
-feature	DArTseq	7DS	7D_1159338	gene	0.241001471
-feature	DArTseq	7DS	7D_999033	gene	0.241001471
-feature	DArTseq	7DS	7D_1099343	gene	0.241001471
-feature	DArTseq	7DS	7D_1038035	gene	0.241001471
-feature	DArTseq	7DS	7D_1178449	gene	0.241001471
-feature	DArTseq	7DS	7D_1233333	gene	0.241001471
-feature	DArTseq	7DS	7D_981589	gene	0.241001471
-feature	DArTseq	7DS	7D_1212691	gene	0.241001471
-feature	DArTseq	7DS	7D_985182	gene	0.241001471
-feature	DArTseq	7DS	7D_1088764	gene	0.241001471
-feature	DArTseq	7DS	7D_1102840	gene	0.241001471
-feature	DArTseq	7DS	7D_2243150	gene	0.26618
-feature	DArTseq	7DS	7D_1166141	gene	0.276811471
-feature	DArTseq	7DS	7D_1105394	gene	0.27708
-feature	DArTseq	7DS	7D_1104298	gene	0.27708
-feature	DArTseq	7DS	7D_1105652	gene	0.294543333
-feature	DArTseq	7DS	7D_1228212	gene	0.29607
-feature	DArTseq	7DS	7D_1283992	gene	0.301611471
-feature	DArTseq	7DS	7D_1074884	gene	0.31014
-feature	DArTseq	7DS	7D_1103479	gene	0.31014
-feature	DArTseq	7DS	7D_1106819	gene	0.31014
-feature	DArTseq	7DS	7D_1119909	gene	0.31014
-feature	DArTseq	7DS	7D_2255792	gene	0.321356667
-feature	DArTseq	7DS	7D_1229679	gene	0.326646667
-feature	DArTseq	7DS	7D_1195033	gene	0.33313
-feature	DArTseq	7DS	7D_1107673	gene	0.34261
-feature	DArTseq	7DS	7D_1102158	gene	0.3554
-feature	DArTseq	7DS	7D_1052940	gene	0.35635
-feature	DArTseq	7DS	7D_1102759	gene	0.36825
-feature	DArTseq	7DS	7D_1032550	gene	0.38172
-feature	DArTseq	7DS	7D_1126037	gene	0.38401
-feature	DArTseq	7DS	7D_1125664	gene	0.38401
-feature	DArTseq	7DS	7D_2245788	gene	0.40064
-feature	DArTseq	7DS	7D_2248158	gene	0.40064
-feature	DArTseq	7DS	7D_1115268	gene	0.4087
-feature	DArTseq	7DS	7D_1290561	gene	0.41151
-feature	DArTseq	7DS	7D_1033352	gene	0.4455
-feature	DArTseq	7DS	7D_2247619	gene	0.4455
-feature	DArTseq	7DS	7D_2272156	gene	0.4455
-feature	DArTseq	7DS	7D_1221556	gene	0.44593
-feature	DArTseq	7DS	7D_2257041	gene	0.4468799
-feature	DArTseq	7DS	7D_2245385	gene	0.45713
-feature	DArTseq	7DS	7D_1101358	gene	0.45713
+			feature	Tauschii	7DS	AT7D6029	gene	0.000
+			feature	Tauschii	7DS	AT7D6031	gene	0.500
+			feature	Tauschii	7DS	AT7D6032	gene	0.500
+			feature	Tauschii	7DS	AT7D6034	gene	0.500
+			feature	Tauschii	7DS	BE425904	gene	0.500
+			feature	Tauschii	7DS	AT7D6035	gene	0.910
+			feature	Tauschii	7DS	AT7D6036	gene	1.733
+			feature	Tauschii	7DS	AT7D6037	gene	1.915
+			feature	Tauschii	7DS	AT7D6039	gene	5.031
+			feature	Tauschii	7DS	AT7D6040	gene	6.099
+			feature	Tauschii	7DS	AT7D6041	gene	6.145
+			feature	Tauschii	7DS	AT7D6042	gene	9.724
+			feature	Tauschii	7DS	AT7D6043	gene	9.915
+			feature	Tauschii	7DS	AT7D6044	gene	11.392
+			feature	Tauschii	7DS	AT7D6046	gene	16.615
+			feature	Tauschii	7DS	AT7D6047	gene	16.933
+			feature	Tauschii	7DS	AT7D6048	gene	16.933
+			feature	Tauschii	7DS	AT7D6049	gene	19.005
+			feature	Tauschii	7DS	AT7D6051	gene	19.096
+			feature	Tauschii	7DS	AT7D6052	gene	19.143
+			feature	Tauschii	7DS	AT7D6054	gene	21.862
+			feature	Tauschii	7DS	AT7D6055	gene	23.234
+			feature	Tauschii	7DS	AT7D6064	gene	25.515
+			feature	Tauschii	7DS	AT7D6065	gene	27.777
+			feature	Tauschii	7DS	AT7D6066	gene	27.823
+			feature	Tauschii	7DS	AT7D6067	gene	28.236
+			feature	Tauschii	7DS	AT7D6068	gene	28.281
+			feature	Tauschii	7DS	AT7D6070	gene	30.041
+			feature	Tauschii	7DS	AT7D6071	gene	31.656
+			feature	Tauschii	7DS	AT7D6072	gene	31.747
+			feature	Tauschii	7DS	AT7D6073	gene	32.892
+			feature	Tauschii	7DS	AT7D6074	gene	33.031
+			feature	Tauschii	7DS	AT7D6075	gene	33.215
+			feature	Tauschii	7DS	AT7D6076	gene	33.899
+			feature	Tauschii	7DS	AT7D6077	gene	34.265
+			feature	Tauschii	7DS	AT7D6078	gene	37.147
+			feature	Tauschii	7DS	AT7D6079	gene	37.788
+			feature	Tauschii	7DS	AT7D6080	gene	37.879
+			feature	Tauschii	7DS	AT7D6081	gene	37.971
+			feature	Tauschii	7DS	AT7D6082	gene	38.381
+			feature	Tauschii	7DS	AT7D6083	gene	38.426
+			feature	Tauschii	7DS	AT7D6085	gene	39.798
+			feature	Tauschii	7DS	AT7D6086	gene	39.798
+			feature	Tauschii	7DS	AT7D6087	gene	39.798
+			feature	Tauschii	7DS	AT7D6090	gene	41.445
+			feature	Tauschii	7DS	AT7D6091	gene	43.279
+			feature	Tauschii	7DS	AT7D6092	gene	44.192
+			feature	Tauschii	7DS	AT7D6094	gene	44.374
+			feature	Tauschii	7DS	AT7D6095	gene	44.374
+			feature	Tauschii	7DS	AT7D6096	gene	44.374
+			feature	Tauschii	7DS	AT7D6097	gene	44.783
+			feature	Tauschii	7DS	AT7D6098	gene	44.783
+			feature	Tauschii	7DS	AT7D6101	gene	45.926
+			feature	Tauschii	7DS	AT7D6102	gene	45.926
+			feature	Tauschii	7DS	AT7D6103	gene	46.564
+			feature	Tauschii	7DS	AT7D6104	gene	46.609
+			feature	Tauschii	7DS	AT7D6105	gene	46.882
+			feature	Tauschii	7DS	AT7D6106	gene	46.882
+			feature	Tauschii	7DS	AT7D6107	gene	47.018
+			feature	Tauschii	7DS	AT7D6109	gene	47.247
+			feature	Tauschii	7DS	AT7D6110	gene	47.511
+			feature	Tauschii	7DS	AT7D6111	gene	47.657
+			feature	Tauschii	7DS	AT7D6112	gene	47.702
+			feature	Tauschii	7DS	AT7D6113	gene	48.569
+			feature	Tauschii	7DS	AT7D6114	gene	48.660
+			feature	Tauschii	7DS	AT7D6115	gene	48.705
+			feature	Tauschii	7DS	AT7D6116	gene	48.705
+			feature	Tauschii	7DS	AT7D6117	gene	48.887
+			feature	Tauschii	7DS	AT7D6118	gene	51.044
+			feature	Tauschii	7DS	AT7D6119	gene	51.090
+			feature	Tauschii	7DS	AT7D6120	gene	51.090
+			feature	Tauschii	7DS	AT7D6122	gene	51.408
+			feature	Tauschii	7DS	AT7D6121	gene	51.408
+			feature	Tauschii	7DS	AT7D6123	gene	51.863
+			feature	Tauschii	7DS	AT7D6125	gene	53.658
+			feature	Tauschii	7DS	AT7D6126	gene	53.886
+			feature	Tauschii	7DS	AT7D6128	gene	54.523
+			feature	Tauschii	7DS	AT7D6129	gene	55.297
+			feature	Tauschii	7DS	AT7D6130	gene	55.388
+			feature	Tauschii	7DS	AT7D6131	gene	55.433
+			feature	Tauschii	7DS	AT7D6132	gene	55.707
+			feature	Tauschii	7DS	AT7D6133	gene	56.575
+			feature	Tauschii	7DS	AT7D6134	gene	57.396
+			feature	Tauschii	7DS	AT7D6139	gene	59.218
+			feature	Tauschii	7DS	BG607523	gene	59.218
+			feature	Tauschii	7DS	BF145272	gene	59.627
+			feature	Tauschii	7DS	AT7D6144	gene	60.857
+			feature	Tauschii	7DS	AT7D6145	gene	63.203
+			feature	Tauschii	7DS	AT7D6146	gene	63.339
+			feature	Tauschii	7DS	AT7D6147	gene	63.566
+			feature	Tauschii	7DS	AT7D6148	gene	64.582
+			feature	Tauschii	7DS	AT7D6149	gene	64.582
+			feature	Tauschii	7DS	AT7D6151	gene	64.812
+			feature	Tauschii	7DS	AT7D6152	gene	64.812
+			feature	Tauschii	7DS	AT7D6153	gene	64.902
+			feature	Tauschii	7DS	AT7D6154	gene	64.993
+			feature	Tauschii	7DS	AT7D6155	gene	65.084
+			feature	Tauschii	7DS	AT7D6161	gene	65.666
+			feature	Tauschii	7DS	AT7D6156	gene	65.722
+			feature	Tauschii	7DS	AT7D6158	gene	68.393
+			feature	Tauschii	7DS	AT7D6163	gene	69.169
+			feature	Tauschii	7DS	AT7D6165	gene	69.352
+			feature	Tauschii	7DS	AT7D6166	gene	69.352
+			feature	Tauschii	7DS	AT7D6167	gene	69.398
+			feature	Tauschii	7DS	AT7D6168	gene	69.761
+			feature	Tauschii	7DS	AT7D6169	gene	69.898
+			feature	Tauschii	7DS	AT7D6170	gene	70.079
+			feature	Tauschii	7DS	AT7D6171	gene	70.079
+			feature	Tauschii	7DS	AT7D6173	gene	71.628
+			feature	Tauschii	7DS	AT7D6175	gene	72.128
+			feature	Tauschii	7DS	AT7D6176	gene	72.128
+			feature	Tauschii	7DS	AT7D6178	gene	72.401
+			feature	Tauschii	7DS	AT7D6179	gene	72.538
+			feature	Tauschii	7DS	AT7D6180	gene	72.811
+			feature	Tauschii	7DS	AT7D6184	gene	75.676
+			feature	Tauschii	7DS	AT7D6185	gene	75.676
+			feature	Tauschii	7DS	AT7D6182	gene	75.676
+			feature	Tauschii	7DS	AT7D6183	gene	75.676
+			feature	Tauschii	7DS	AT7D6186	gene	76.223
+			feature	Tauschii	7DS	AT7D6187	gene	76.223
+			feature	Tauschii	7DS	AT7D6188	gene	76.404
+			feature	Tauschii	7DS	AT7D6189	gene	76.404
+			feature	Tauschii	7DS	AT7D6190	gene	76.404
+			feature	Tauschii	7DS	BE445587	gene	78.516
+			feature	Tauschii	7DS	AT7D6195	gene	79.107
+			feature	Tauschii	7DS	AT7D6196	gene	79.246
+			feature	Tauschii	7DS	AT7D6197	gene	79.524
+			feature	Tauschii	7DS	AT7D6201	gene	80.903
+			feature	Tauschii	7DS	AT7D6204	gene	80.948
+			feature	Tauschii	7DS	AT7D6206	gene	81.175
+			feature	Tauschii	7DS	AT7D6207	gene	81.175
+			feature	Tauschii	7DS	BE499248	gene	81.175
+			feature	Tauschii	7DS	AT7D6208	gene	81.266
+			feature	Tauschii	7DS	AT7D6210	gene	81.812
+			feature	Tauschii	7DS	AT7D6212	gene	81.812
+			feature	Tauschii	7DS	BG274948	gene	81.812
+			feature	Tauschii	7DS	AT7D6214	gene	81.812
+			feature	Tauschii	7DS	AT7D6209	gene	81.812
+			feature	Tauschii	7DS	AT7D6216	gene	81.858
+			feature	Tauschii	7DS	AT7D6217	gene	81.858
+			feature	Tauschii	7DS	AT7D6218	gene	82.085
+			feature	Tauschii	7DS	AT7D6219	gene	82.312
+			feature	Tauschii	7DS	AT7D6220	gene	82.312
+			feature	Tauschii	7DS	AT7D6222	gene	82.721
+			feature	Tauschii	7DS	AT7D6223	gene	83.496
+			feature	Tauschii	7DS	AT7D6224	gene	83.769
+			feature	Tauschii	7DS	AT7D6225	gene	83.905
+			feature	Tauschii	7DS	AT7D6226	gene	83.950
+			feature	Tauschii	7DS	AT7D6227	gene	84.087
+			feature	Tauschii	7DS	AT7D6229	gene	86.007
+			feature	Tauschii	7DS	AT7D6230	gene	87.381
+			feature	Tauschii	7DS	AT7D6231	gene	87.654
+			feature	Tauschii	7DS	AT7D6233	gene	87.699
+			feature	Tauschii	7DS	AT7D6234	gene	87.836
+			feature	Tauschii	7DS	AT7D6235	gene	87.836
+			feature	Tauschii	7DS	AT7D6236	gene	87.973
+			feature	Tauschii	7DS	AT7D6237	gene	88.019
+			feature	Tauschii	7DS	AT7D6238	gene	88.109
+			feature	Tauschii	7DS	AT7D6239	gene	88.109
+			feature	Tauschii	7DS	AT7D6240	gene	88.109
+			feature	Tauschii	7DS	AT7D6241	gene	88.155
+			feature	Tauschii	7DS	AT7D6242	gene	88.155
+			feature	Tauschii	7DS	AT7D6243	gene	88.655
+			feature	Tauschii	7DS	AT7D6246	gene	88.701
+			feature	Tauschii	7DS	AT7D6247	gene	89.202
+			feature	Tauschii	7DS	AT7D6249	gene	90.253
+			feature	Tauschii	7DS	AT7D6250	gene	90.662
+			feature	Tauschii	7DS	AT7D6253	gene	90.936
+			feature	Tauschii	7DS	AT7D6251	gene	90.936
+			feature	Tauschii	7DS	AT7D6252	gene	90.936
+			feature	Tauschii	7DS	AT7D6255	gene	91.072
+			feature	Tauschii	7DS	AT7D6256	gene	91.300
+			feature	Tauschii	7DS	AT7D6258	gene	91.345
+			feature	Tauschii	7DS	AT7D6259	gene	91.572
+			feature	Tauschii	7DS	AT7D6260	gene	92.073
+			feature	Tauschii	7DS	AT7D6262	gene	92.209
+			feature	Tauschii	7DS	AT7D6263	gene	92.300
+			feature	Tauschii	7DS	AT7D6270	gene	93.073
+			feature	Tauschii	7DS	BF293371	gene	93.118
+			feature	Tauschii	7DS	AT7D6272	gene	93.163
+			feature	Tauschii	7DS	AT7D6276	gene	94.123
+			feature	Tauschii	7DS	AT7D6278	gene	94.169
+			feature	Tauschii	7DS	AT7D6279	gene	94.169
+			feature	Tauschii	7DS	BE495325	gene	94.169
+			feature	Tauschii	7DS	AT7D6281	gene	94.942
+			feature	Tauschii	7DS	AT7D6282	gene	95.169
+			feature	Tauschii	7DS	BF473138	gene	95.350
+			feature	Tauschii	7DS	AT7D6284	gene	95.487
+			feature	Tauschii	7DS	AT7D6287	gene	95.759
+			feature	Tauschii	7DS	AT7D6289	gene	96.396
+			feature	Tauschii	7DS	AT7D6292	gene	96.533
+			feature	Tauschii	7DS	AT7D6291	gene	96.533
+			feature	Tauschii	7DS	AT7D6290	gene	96.533
+			feature	Tauschii	7DS	AT7D6293	gene	96.897
+			feature	Tauschii	7DS	AT7D6294	gene	96.987
+			feature	Tauschii	7DS	AT7D6298	gene	97.487
+			feature	Tauschii	7DS	AT7D6297	gene	97.487
+			feature	Tauschii	7DS	BE590476	gene	97.851
+			feature	Tauschii	7DS	AT7D6308	gene	97.896
+			feature	Tauschii	7DS	BF473825	gene	97.896
+			feature	Tauschii	7DS	AT7D6309	gene	97.896
+			feature	Tauschii	7DS	AT7D6315	gene	98.078
+			feature	Tauschii	7DS	AT7D6314	gene	98.078
+			feature	Tauschii	7DS	AT7D6316	gene	98.078
+			feature	Tauschii	7DS	AT7D6311	gene	98.078
+			feature	Tauschii	7DS	AT7D6313	gene	98.078
+			feature	Tauschii	7DS	AT7D6310	gene	98.078
+			feature	Tauschii	7DS	AT7D6317	gene	98.078
+			feature	Tauschii	7DS	AT7D6318	gene	98.123
+			feature	Tauschii	7DS	AT7D6319	gene	98.169
+			feature	Tauschii	7DS	AT7D6321	gene	98.457
+			feature	Tauschii	7DS	AT7D6322	gene	98.507
+			feature	Tauschii	7DS	AT7D6324	gene	98.779
+			feature	Tauschii	7DS	AT7D6325	gene	98.779
+			feature	Tauschii	7DS	AT7D6326	gene	98.779
+			feature	Tauschii	7DS	AT7D6323	gene	98.779
+			feature	Tauschii	7DS	AT7D6327	gene	98.916
+			feature	Tauschii	7DS	AT7D6328	gene	98.916
+			feature	Tauschii	7DS	AT7D6329	gene	100.104
+			feature	Tauschii	7DS	AT7D6333	gene	100.467
+			feature	Tauschii	7DS	AT7D6334	gene	100.558
+			feature	Tauschii	7DS	AT7D6340	gene	100.876
+			feature	Tauschii	7DS	AT7D6343	gene	100.876
+			feature	Tauschii	7DS	AT7D6337	gene	100.876
+			feature	Tauschii	7DS	AT7D6341	gene	100.876
+			feature	Tauschii	7DS	AT7D6338	gene	100.876
+			feature	Tauschii	7DS	AT7D6345	gene	101.331
+			feature	Tauschii	7DS	AT7D6346	gene	101.331
+			feature	Tauschii	7DS	AT7D6348	gene	101.422
+			feature	Tauschii	7DS	AT7D6350	gene	101.422
+			feature	Tauschii	7DS	BE493965	gene	101.422
+			feature	Tauschii	7DS	AT7D6349	gene	101.422
+			feature	Tauschii	7DS	AT7D6353	gene	101.467
+			feature	Tauschii	7DS	AT7D6354	gene	101.467
+			feature	Tauschii	7DS	AT7D6355	gene	101.467
+			feature	Tauschii	7DS	AT7D6358	gene	101.467
+			feature	Tauschii	7DS	AT7D6357	gene	101.467
+			feature	Tauschii	7DS	AT7D6360	gene	101.513
+			feature	Tauschii	7DS	AT7D6361	gene	101.604
+			feature	Tauschii	7DS	AT7D6363	gene	101.740
+			feature	Tauschii	7DS	AT7D6365	gene	101.740
+			feature	Tauschii	7DS	AT7D6367	gene	101.740
+			feature	Tauschii	7DS	BE443596	gene	101.740
+			feature	Tauschii	7DS	BE591002	gene	101.740
+			feature	Tauschii	7DS	CD452629	gene	101.740
+			feature	Tauschii	7DS	AT7D6368	gene	101.967
+			feature	Tauschii	7DS	AT7D6369	gene	104.128
+			feature	Tauschii	7DS	AT7D6370	gene	105.363
+			feature	Tauschii	7DS	AT7D6371	gene	105.727
+			feature	Tauschii	7DS	AT7D6372	gene	105.727
+			feature	Tauschii	7DS	AT7D6373	gene	105.863
+			feature	Tauschii	7DS	AT7D6374	gene	105.863
+			feature	Tauschii	7DS	AT7D6375	gene	105.909
+			feature	Tauschii	7DS	AT7D6376	gene	105.909
+			feature	Tauschii	7DS	AT7D6377	gene	105.954
+			feature	Tauschii	7DS	AT7D6378	gene	106.182
+			feature	Tauschii	7DS	AT7D6381	gene	106.501
+			feature	Tauschii	7DS	AT7D6382	gene	106.501
+			feature	Tauschii	7DS	AT7D6384	gene	106.728
+			feature	Tauschii	7DS	AT7D6385	gene	106.728
+			feature	Tauschii	7DS	AT7D6387	gene	107.183
+			feature	Tauschii	7DS	AT7D6389	gene	107.319
+			feature	Tauschii	7DS	AT7D6390	gene	107.409
+			feature	Tauschii	7DS	AT7D6391	gene	107.409
+			feature	Tauschii	7DS	AT7D6392	gene	107.409
+			feature	Tauschii	7DS	AT7D6393	gene	107.409
+			feature	Tauschii	7DS	AT7D6394	gene	107.409
+			feature	Tauschii	7DS	AT7D6395	gene	107.773
+			feature	Tauschii	7DS	AT7D6399	gene	108.046
+			feature	Tauschii	7DS	AT7D6412	gene	108.046
+			feature	Tauschii	7DS	AT7D6397	gene	108.046
+			feature	Tauschii	7DS	AT7D6400	gene	108.046
+			feature	Tauschii	7DS	AT7D6406	gene	108.046
+			feature	Tauschii	7DS	AT7D6408	gene	108.046
+			feature	Tauschii	7DS	AT7D6411	gene	108.046
+			feature	Tauschii	7DS	CD452949	gene	108.046
+			feature	Tauschii	7DS	AT7D6413	gene	108.136
+			feature	Tauschii	7DS	AT7D6414	gene	108.136
+			feature	Tauschii	7DS	AT7D6415	gene	108.136
+			feature	Tauschii	7DS	AT7D6417	gene	108.182
+			feature	Tauschii	7DS	AT7D6418	gene	108.545
+			feature	Tauschii	7DS	AT7D6420	gene	108.591
+			feature	Tauschii	7DS	AT7D6423	gene	108.591
+			feature	Tauschii	7DS	AT7D6419	gene	108.591
+			feature	Tauschii	7DS	AT7D6421	gene	108.591
+			feature	Tauschii	7DS	AT7D6422	gene	108.591
+			feature	Tauschii	7DS	AT7D6426	gene	108.591
+			feature	Tauschii	7DS	BE443936	gene	108.591
+			feature	Tauschii	7DS	BQ161433	gene	108.591
+			feature	Tauschii	7DS	AT7D6427	gene	108.636
+			feature	Tauschii	7DS	AT7D6428	gene	108.636
+			feature	Tauschii	7DS	AT7D6429	gene	109.365
+			feature	Tauschii	7DS	AT7D6430	gene	109.683
+			feature	Tauschii	7DS	AT7D6431	gene	110.139
+			feature	Tauschii	7DS	AT7D6432	gene	110.185
+			feature	Tauschii	7DS	AT7D6433	gene	110.185
+			feature	Tauschii	7DS	AT7D6434	gene	110.185
+			feature	Tauschii	7DS	AT7D6435	gene	110.185
+			feature	Tauschii	7DS	AT7D6437	gene	110.276
+			feature	Tauschii	7DS	AT7D6436	gene	110.276
+			feature	Tauschii	7DS	AT7D6438	gene	110.367
+			feature	Tauschii	7DS	AT7D6439	gene	110.549
+			feature	Tauschii	7DS	AT7D6440	gene	110.594
+			feature	Tauschii	7DS	AT7D6441	gene	110.640
+			feature	Tauschii	7DS	AT7D6444	gene	110.867
+			feature	Tauschii	7DS	AT7D6443	gene	110.867
+			feature	Tauschii	7DS	BE498662	gene	110.867
+			feature	Tauschii	7DS	AT7D6449	gene	110.913
+			feature	Tauschii	7DS	AT7D6448	gene	110.913
+			feature	Tauschii	7DS	AT7D6450	gene	110.913
+			feature	Tauschii	7DS	AT7D6453	gene	111.095
+			feature	Tauschii	7DS	AT7D6452	gene	111.095
+			feature	Tauschii	7DS	AT7D6455	gene	111.140
+			feature	Tauschii	7DS	AT7D6458	gene	111.276
+			feature	Tauschii	7DS	AT7D6465	gene	111.373
+			feature	Tauschii	7DS	AT7D6466	gene	111.373
+			feature	Tauschii	7DS	AT7D6459	gene	111.373
+			feature	Tauschii	7DS	AT7D6460	gene	111.373
+			feature	Tauschii	7DS	AT7D6461	gene	111.373
+			feature	Tauschii	7DS	AT7D6462	gene	111.373
+			feature	Tauschii	7DS	AT7D6463	gene	111.373
+			feature	Tauschii	7DS	AT7D6464	gene	111.373
+			feature	Tauschii	7DS	AT7D6467	gene	111.469
+			feature	Tauschii	7DS	AT7D6469	gene	111.515
+			feature	Tauschii	7DS	BF201699	gene	111.560
+			feature	Tauschii	7DS	AT7D6471	gene	111.651
+			feature	Tauschii	7DS	AT7D6474	gene	111.696
+			feature	Tauschii	7DS	AT7D6475	gene	111.742
+			feature	Tauschii	7DS	BE426692	gene	111.742
+			feature	Tauschii	7DS	AT7D6478	gene	111.742
+			feature	Tauschii	7DS	AT7D6481	gene	111.742
+			feature	Tauschii	7DS	AT7D6482	gene	111.742
+			feature	Tauschii	7DS	AT7D6486	gene	111.742
+			feature	Tauschii	7DS	BE443572	gene	111.742
+			feature	Tauschii	7DS	BE497245	gene	111.742
+			feature	Tauschii	7DS	BQ168298	gene	111.742
+			feature	Tauschii	7DS	AT7D6485	gene	111.742
+			feature	Tauschii	7DS	AT7D6487	gene	111.878
+			feature	Tauschii	7DS	AT7D6489	gene	111.969
+			feature	Tauschii	7DS	AT7D6488	gene	111.969
+			feature	Tauschii	7DS	AT7D6494	gene	112.060
+			feature	Tauschii	7DS	AT7D6497	gene	112.196
+			feature	Tauschii	7DS	AT7D6498	gene	112.242
+			feature	Tauschii	7DS	AT7D6499	gene	112.242
+			feature	Tauschii	7DS	AT7D6500	gene	112.242
+			feature	Tauschii	7DS	AT7D6505	gene	112.332
+			feature	Tauschii	7DS	AT7D6509	gene	112.332
+			feature	Tauschii	7DS	BF474966	gene	112.332
+			feature	Tauschii	7DS	AT7D6506	gene	112.332
+			feature	Tauschii	7DS	AT7D6502	gene	112.332
+			feature	Tauschii	7DS	AT7D6507	gene	112.332
+			feature	Tauschii	7DS	BE490219	gene	112.332
+			feature	Tauschii	7DS	AT7D6510	gene	112.378
+			feature	Tauschii	7DS	AT7D6516	gene	112.378
+			feature	Tauschii	7DS	AT7D6520	gene	112.378
+			feature	Tauschii	7DS	AT7D6524	gene	112.378
+			feature	Tauschii	7DS	AT7D6519	gene	112.378
+			feature	Tauschii	7DS	AT7D6517	gene	112.378
+			feature	Tauschii	7DS	AT7D6514	gene	112.378
+			feature	Tauschii	7DS	AT7D6511	gene	112.378
+			feature	Tauschii	7DS	AT7D6526	gene	112.742
+			feature	Tauschii	7DS	AT7D6527	gene	112.742
+			feature	Tauschii	7DS	AT7D6535	gene	112.742
+			feature	Tauschii	7DS	AT7D6534	gene	112.742
+			feature	Tauschii	7DS	AT7D6528	gene	112.742
+			feature	Tauschii	7DS	AT7D6531	gene	112.742
+			feature	Tauschii	7DS	AT7D6532	gene	112.742
+			feature	Tauschii	7DS	AT7D6533	gene	112.742
+			feature	Tauschii	7DS	AT7D6529	gene	112.742
+			feature	Tauschii	7DS	AT7D6536	gene	112.787
+			feature	Tauschii	7DS	AT7D6537	gene	112.787
+			feature	Tauschii	7DS	AT7D6542	gene	112.924
+			feature	Tauschii	7DS	BE471272	gene	112.924
+			feature	Tauschii	7DS	AT7D6550	gene	113.014
+			feature	Tauschii	7DS	AT7D6547	gene	113.014
+			feature	Tauschii	7DS	AT7D6551	gene	113.014
+			feature	Tauschii	7DS	BE404728	gene	113.014
+			feature	Tauschii	7DS	BE446359	gene	113.014
+			feature	Tauschii	7DS	AT7D6545	gene	113.014
+			feature	Tauschii	7DS	AT7D6552	gene	113.060
+			feature	Tauschii	7DS	AT7D6553	gene	113.060
+			feature	Tauschii	7DS	AT7D6555	gene	113.060
+			feature	Tauschii	7DS	AT7D6556	gene	113.060
+			feature	Tauschii	7DS	BF291338	gene	113.060
+			feature	Tauschii	7DS	AT7D6561	gene	113.105
+			feature	Tauschii	7DS	AT7D6557	gene	113.105
+			feature	Tauschii	7DS	AT7D6562	gene	113.105
+			feature	Tauschii	7DS	BE443554	gene	113.105
+			feature	Tauschii	7DS	BE586072	gene	113.105
+			feature	Tauschii	7DS	AT7D6558	gene	113.105
+			feature	Tauschii	7DS	AT7D6567	gene	113.151
+			feature	Tauschii	7DS	AT7D6569	gene	113.151
+			feature	Tauschii	7DS	BE499622	gene	113.151
+			feature	Tauschii	7DS	AT7D6564	gene	113.151
+			feature	Tauschii	7DS	BE591737	gene	113.151
+			feature	Tauschii	7DS	AT7D6571	gene	113.196
+			feature	Tauschii	7DS	AT7D6572	gene	113.880
+			feature	Tauschii	7DS	AT7D6574	gene	114.472
+			feature	Tauschii	7DS	AT7D6573	gene	114.472
+			feature	Tauschii	7DS	AT7D6575	gene	114.472
+			feature	Tauschii	7DS	AT7D6654	gene	114.563
+			feature	Tauschii	7DS	AT7D6612	gene	114.563
+			feature	Tauschii	7DS	AT7D6640	gene	114.563
+			feature	Tauschii	7DS	AT7D6650	gene	114.563
+			feature	Tauschii	7DS	AT7D6651	gene	114.563
+			feature	Tauschii	7DS	AT7D6655	gene	114.563
+			feature	Tauschii	7DS	AT7D6660	gene	114.563
+			feature	Tauschii	7DS	AT7D6648	gene	114.563
+			feature	Tauschii	7DS	AT7D6601	gene	114.563
+			feature	Tauschii	7DS	AT7D6599	gene	114.563
+			feature	Tauschii	7DS	AT7D6602	gene	114.563
+			feature	Tauschii	7DS	AT7D6603	gene	114.563
+			feature	Tauschii	7DS	AT7D6608	gene	114.563
+			feature	Tauschii	7DS	AT7D6610	gene	114.563
+			feature	Tauschii	7DS	AT7D6604	gene	114.563
+			feature	Tauschii	7DS	AT7D6656	gene	114.563
+			feature	Tauschii	7DS	AT7D6585	gene	114.563
+			feature	Tauschii	7DS	AT7D6658	gene	114.563
+			feature	Tauschii	7DS	AT7D6634	gene	114.563
+			feature	Tauschii	7DS	AT7D6606	gene	114.563
+			feature	Tauschii	7DS	AT7D6620	gene	114.563
+			feature	Tauschii	7DS	AT7D6643	gene	114.563
+			feature	Tauschii	7DS	AT7D6659	gene	114.563
+			feature	Tauschii	7DS	AT7D6653	gene	114.563
+			feature	Tauschii	7DS	AT7D6621	gene	114.563
+			feature	Tauschii	7DS	AT7D6642	gene	114.563
+			feature	Tauschii	7DS	AT7D6591	gene	114.563
+			feature	Tauschii	7DS	AT7D6616	gene	114.563
+			feature	Tauschii	7DS	AT7D6635	gene	114.563
+			feature	Tauschii	7DS	AT7D6657	gene	114.563
+			feature	Tauschii	7DS	BF482692	gene	114.563
+			feature	Tauschii	7DS	AT7D6597	gene	114.563
+			feature	Tauschii	7DS	AT7D6589	gene	114.563
+			feature	Tauschii	7DS	AT7D6633	gene	114.563
+			feature	Tauschii	7DS	AT7D6631	gene	114.563
+			feature	Tauschii	7DS	AT7D6644	gene	114.563
+			feature	Tauschii	7DS	AT7D6647	gene	114.563
+			feature	Tauschii	7DS	CD452455	gene	114.563
+			feature	Tauschii	7DS	AT7D6639	gene	114.563
+			feature	Tauschii	7DS	AT7D6594	gene	114.563
+			feature	Tauschii	7DS	AT7D6588	gene	114.563
+			feature	Tauschii	7DS	AT7D6590	gene	114.563
+			feature	Tauschii	7DS	AT7D6577	gene	114.563
+			feature	Tauschii	7DS	BF291735	gene	114.563
+			feature	Tauschii	7DS	AT7D6576	gene	114.563
+			feature	Tauschii	7DS	AT7D6581	gene	114.563
+			feature	Tauschii	7DS	AT7D6578	gene	114.563
+			feature	Tauschii	7DS	AT7D6626	gene	114.563
+			feature	Tauschii	7DS	AT7D6583	gene	114.563
+			feature	Tauschii	7DS	AT7D6613	gene	114.563
+			feature	Tauschii	7DS	BE398591	gene	114.563
+			feature	Tauschii	7DS	BE590582	gene	114.563
+			feature	Tauschii	7DS	AT7D6615	gene	114.563
+			feature	Tauschii	7DS	AT7D6662	gene	114.563
+			feature	Tauschii	7DS	AT7D6587	gene	114.563
+			feature	Tauschii	7DS	AT7D6619	gene	114.563
+			feature	Tauschii	7DS	BE424174	gene	114.563
+			feature	Tauschii	7DS	BE500122	gene	114.563
+			feature	Tauschii	7DS	BQ167588	gene	114.563
+			feature	DArTseq	7DS	7D_1137006	gene	0
+			feature	DArTseq	7DS	7D_1032620	gene	0.08235
+			feature	DArTseq	7DS	7D_1043924	gene	0.08235
+			feature	DArTseq	7DS	7D_1045226	gene	0.08235
+			feature	DArTseq	7DS	7D_2322316	gene	0.08235
+			feature	DArTseq	7DS	7D_979471	gene	0.08235
+			feature	DArTseq	7DS	7D_1008326	gene	0.08235
+			feature	DArTseq	7DS	7D_978539	gene	0.08235
+			feature	DArTseq	7DS	7D_1233053	gene	0.08235
+			feature	DArTseq	7DS	7D_1054742	gene	0.08235
+			feature	DArTseq	7DS	7D_1393841	gene	0.08235
+			feature	DArTseq	7DS	7D_1057834	gene	0.09359
+			feature	DArTseq	7DS	7D_2252071	gene	0.09359
+			feature	DArTseq	7DS	7D_2245244	gene	0.10065
+			feature	DArTseq	7DS	7D_1049618	gene	0.1273
+			feature	DArTseq	7DS	7D_1054974	gene	0.1273
+			feature	DArTseq	7DS	7D_983331	gene	0.1273
+			feature	DArTseq	7DS	7D_1126353	gene	0.13292
+			feature	DArTseq	7DS	7D_984165	gene	0.13854
+			feature	DArTseq	7DS	7D_1076041	gene	0.13854
+			feature	DArTseq	7DS	7D_1102374	gene	0.13854
+			feature	DArTseq	7DS	7D_2256448	gene	0.13854
+			feature	DArTseq	7DS	7D_1252266	gene	0.15003
+			feature	DArTseq	7DS	7D_1699107	gene	0.15003
+			feature	DArTseq	7DS	7D_2245640	gene	0.15003
+			feature	DArTseq	7DS	7D_1125545	gene	0.158978
+			feature	DArTseq	7DS	7D_1234950	gene	0.16166
+			feature	DArTseq	7DS	7D_1254829	gene	0.16166
+			feature	DArTseq	7DS	7D_983470	gene	0.16166
+			feature	DArTseq	7DS	7D_1228132	gene	0.16761
+			feature	DArTseq	7DS	7D_1047674	gene	0.169091
+			feature	DArTseq	7DS	7D_1138898	gene	0.17356
+			feature	DArTseq	7DS	7D_1267060	gene	0.17356
+			feature	DArTseq	7DS	7D_1232977	gene	0.17356
+			feature	DArTseq	7DS	7D_1090577	gene	0.17356
+			feature	DArTseq	7DS	7D_1233195	gene	0.17356
+			feature	DArTseq	7DS	7D_1244962	gene	0.17356
+			feature	DArTseq	7DS	7D_1118537	gene	0.187081471
+			feature	DArTseq	7DS	7D_1035864	gene	0.19578
+			feature	DArTseq	7DS	7D_1054857	gene	0.19578
+			feature	DArTseq	7DS	7D_1260083	gene	0.19578
+			feature	DArTseq	7DS	7D_2250296	gene	0.19578
+			feature	DArTseq	7DS	7D_2247396	gene	0.19578
+			feature	DArTseq	7DS	7D_2243521	gene	0.20025
+			feature	DArTseq	7DS	7D_1102395	gene	0.212751
+			feature	DArTseq	7DS	7D_2245098	gene	0.212751
+			feature	DArTseq	7DS	7D_1118256	gene	0.227069211
+			feature	DArTseq	7DS	7D_1252846	gene	0.227069211
+			feature	DArTseq	7DS	7D_1255379	gene	0.227069211
+			feature	DArTseq	7DS	7D_1202848	gene	0.227069211
+			feature	DArTseq	7DS	7D_1117501	gene	0.227069211
+			feature	DArTseq	7DS	7D_1139026	gene	0.227069211
+			feature	DArTseq	7DS	7D_1128062	gene	0.227069211
+			feature	DArTseq	7DS	7D_1094096	gene	0.227069211
+			feature	DArTseq	7DS	7D_1219642	gene	0.228534615
+			feature	DArTseq	7DS	7D_1713495	gene	0.23192
+			feature	DArTseq	7DS	7D_1041387	gene	0.23192
+			feature	DArTseq	7DS	7D_1030549	gene	0.23192
+			feature	DArTseq	7DS	7D_1681261	gene	0.237662946
+			feature	DArTseq	7DS	7D_1073523	gene	0.241001471
+			feature	DArTseq	7DS	7D_1074360	gene	0.241001471
+			feature	DArTseq	7DS	7D_1092977	gene	0.241001471
+			feature	DArTseq	7DS	7D_1159338	gene	0.241001471
+			feature	DArTseq	7DS	7D_999033	gene	0.241001471
+			feature	DArTseq	7DS	7D_1099343	gene	0.241001471
+			feature	DArTseq	7DS	7D_1038035	gene	0.241001471
+			feature	DArTseq	7DS	7D_1178449	gene	0.241001471
+			feature	DArTseq	7DS	7D_1233333	gene	0.241001471
+			feature	DArTseq	7DS	7D_981589	gene	0.241001471
+			feature	DArTseq	7DS	7D_1212691	gene	0.241001471
+			feature	DArTseq	7DS	7D_985182	gene	0.241001471
+			feature	DArTseq	7DS	7D_1088764	gene	0.241001471
+			feature	DArTseq	7DS	7D_1102840	gene	0.241001471
+			feature	DArTseq	7DS	7D_2243150	gene	0.26618
+			feature	DArTseq	7DS	7D_1166141	gene	0.276811471
+			feature	DArTseq	7DS	7D_1105394	gene	0.27708
+			feature	DArTseq	7DS	7D_1104298	gene	0.27708
+			feature	DArTseq	7DS	7D_1105652	gene	0.294543333
+			feature	DArTseq	7DS	7D_1228212	gene	0.29607
+			feature	DArTseq	7DS	7D_1283992	gene	0.301611471
+			feature	DArTseq	7DS	7D_1074884	gene	0.31014
+			feature	DArTseq	7DS	7D_1103479	gene	0.31014
+			feature	DArTseq	7DS	7D_1106819	gene	0.31014
+			feature	DArTseq	7DS	7D_1119909	gene	0.31014
+			feature	DArTseq	7DS	7D_2255792	gene	0.321356667
+			feature	DArTseq	7DS	7D_1229679	gene	0.326646667
+			feature	DArTseq	7DS	7D_1195033	gene	0.33313
+			feature	DArTseq	7DS	7D_1107673	gene	0.34261
+			feature	DArTseq	7DS	7D_1102158	gene	0.3554
+			feature	DArTseq	7DS	7D_1052940	gene	0.35635
+			feature	DArTseq	7DS	7D_1102759	gene	0.36825
+			feature	DArTseq	7DS	7D_1032550	gene	0.38172
+			feature	DArTseq	7DS	7D_1126037	gene	0.38401
+			feature	DArTseq	7DS	7D_1125664	gene	0.38401
+			feature	DArTseq	7DS	7D_2245788	gene	0.40064
+			feature	DArTseq	7DS	7D_2248158	gene	0.40064
+			feature	DArTseq	7DS	7D_1115268	gene	0.4087
+			feature	DArTseq	7DS	7D_1290561	gene	0.41151
+			feature	DArTseq	7DS	7D_1033352	gene	0.4455
+			feature	DArTseq	7DS	7D_2247619	gene	0.4455
+			feature	DArTseq	7DS	7D_2272156	gene	0.4455
+			feature	DArTseq	7DS	7D_1221556	gene	0.44593
+			feature	DArTseq	7DS	7D_2257041	gene	0.4468799
+			feature	DArTseq	7DS	7D_2245385	gene	0.45713
+			feature	DArTseq	7DS	7D_1101358	gene	0.45713
+			feature	DArTseq	7DS	7D_2305790	gene	0.45713
+			feature	DArTseq	7DS	7D_995254	gene	0.45713
+			feature	DArTseq	7DS	7D_1006480	gene	0.45713
+			feature	DArTseq	7DS	7D_1066402	gene	0.47935
+			feature	DArTseq	7DS	7D_2243062	gene	0.5150599
+			feature	DArTseq	7DS	7D_1099288	gene	0.5380499
+			feature	DArTseq	7DS	7D_1091588	gene	0.5380499
+			feature	DArTseq	7DS	7D_1071794	gene	0.5630499
+			feature	DArTseq	7DS	7D_2244440	gene	0.5630499
+			feature	DArTseq	7DS	7D_1077807	gene	0.5745399
+			feature	DArTseq	7DS	7D_2248688	gene	0.5745399
+			feature	DArTseq	7DS	7D_1211664	gene	0.5860299
+			feature	DArTseq	7DS	7D_2247781	gene	0.5949999
+			feature	DArTseq	7DS	7D_1239597	gene	0.6084999
+			feature	DArTseq	7DS	7D_1130064	gene	0.6197399
+			feature	DArTseq	7DS	7D_1064076	gene	0.6317899
+			feature	DArTseq	7DS	7D_1093999	gene	0.6317899
+			feature	DArTseq	7DS	7D_2371309	gene	0.6431499
+			feature	DArTseq	7DS	7D_2255075	gene	0.6431499
+			feature	DArTseq	7DS	7D_3022631	gene	0.6431499
+			feature	DArTseq	7DS	7D_1052680	gene	0.6431499
+			feature	DArTseq	7DS	7D_983123	gene	0.6669599
+			feature	DArTseq	7DS	7D_2251698	gene	0.6693099
+			feature	DArTseq	7DS	7D_1095282	gene	0.6783199
+			feature	DArTseq	7DS	7D_1206760	gene	0.6783199
+			feature	DArTseq	7DS	7D_2247920	gene	0.6783199
+			feature	DArTseq	7DS	7D_1108537	gene	0.7015099
+			feature	DArTseq	7DS	7D_1063361	gene	0.7015099
+			feature	DArTseq	7DS	7D_1209808	gene	0.7015099
+			feature	DArTseq	7DS	7D_1695892	gene	0.7015099
+			feature	DArTseq	7DS	7D_986946	gene	0.7015099
+			feature	DArTseq	7DS	7D_2244306	gene	0.7015099
+			feature	DArTseq	7DS	7D_2254968	gene	0.7015099
+			feature	DArTseq	7DS	7D_978872	gene	0.7015099
+			feature	DArTseq	7DS	7D_980871	gene	0.7015099
+			feature	DArTseq	7DS	7D_2293369	gene	0.7015099
+			feature	DArTseq	7DS	7D_1054101	gene	0.7015099
+			feature	DArTseq	7DS	7D_1074121	gene	0.7015099
+			feature	DArTseq	7DS	7D_1113732	gene	0.7015099
+			feature	DArTseq	7DS	7D_1204683	gene	0.7015099
+			feature	DArTseq	7DS	7D_1217281	gene	0.7015099
+			feature	DArTseq	7DS	7D_2254206	gene	0.7015099
+			feature	DArTseq	7DS	7D_984552	gene	0.7015099
+			feature	DArTseq	7DS	7D_2250681	gene	0.7015099
+			feature	DArTseq	7DS	7D_2250864	gene	0.7015099
+			feature	DArTseq	7DS	7D_2256309	gene	0.7015099
+			feature	DArTseq	7DS	7D_2262760	gene	0.7015099
+			feature	DArTseq	7DS	7D_1051643	gene	0.7129999
+			feature	DArTseq	7DS	7D_2252025	gene	0.7129999
+			feature	DArTseq	7DS	7D_1006288	gene	0.7129999
+			feature	DArTseq	7DS	7D_980883	gene	0.7129999
+			feature	DArTseq	7DS	7D_1009223	gene	0.7129999
+			feature	DArTseq	7DS	7D_2247941	gene	0.7129999
+			feature	DArTseq	7DS	7D_1106537	gene	0.7261399
+			feature	DArTseq	7DS	7D_2303748	gene	0.7356299
+			feature	DArTseq	7DS	7D_1258539	gene	0.7534599
+			feature	DArTseq	7DS	7D_1161473	gene	0.7588899
+			feature	DArTseq	7DS	7D_1204803	gene	0.7588899
+			feature	DArTseq	7DS	7D_2244789	gene	0.7702498
+			feature	DArTseq	7DS	7D_1063611	gene	0.7702498
+			feature	DArTseq	7DS	7D_1373844	gene	0.7702498
+			feature	DArTseq	7DS	7D_1078507	gene	0.7820098
+			feature	DArTseq	7DS	7D_1111235	gene	0.7820098
+			feature	DArTseq	7DS	7D_1217189	gene	0.7820098
+			feature	DArTseq	7DS	7D_2252209	gene	0.7820098
+			feature	DArTseq	7DS	7D_2249375	gene	0.7820098
+			feature	DArTseq	7DS	7D_1033517	gene	0.7934998
+			feature	DArTseq	7DS	7D_1076464	gene	0.7934998
+			feature	DArTseq	7DS	7D_1217337	gene	0.7934998
+			feature	DArTseq	7DS	7D_1221007	gene	0.7934998
+			feature	DArTseq	7DS	7D_2246283	gene	0.7934998
+			feature	DArTseq	7DS	7D_2246175	gene	0.8041399
+			feature	DArTseq	7DS	7D_1217531	gene	0.80861
+			feature	DArTseq	7DS	7D_1107090	gene	0.8146698
+			feature	DArTseq	7DS	7D_2245882	gene	0.8146698
+			feature	DArTseq	7DS	7D_2246169	gene	0.8146698
+			feature	DArTseq	7DS	7D_2252609	gene	0.8146698
+			feature	DArTseq	7DS	7D_978335	gene	0.8146698
+			feature	DArTseq	7DS	7D_1238469	gene	0.82194
+			feature	DArTseq	7DS	7D_1128549	gene	0.8371499
+			feature	DArTseq	7DS	7D_1077276	gene	0.8487799
+			feature	DArTseq	7DS	7D_1059480	gene	0.8487799
+			feature	DArTseq	7DS	7D_1125378	gene	0.8487799
+			feature	DArTseq	7DS	7D_1052353	gene	0.84897
+			feature	DArTseq	7DS	7D_1064147	gene	0.8720899
+			feature	DArTseq	7DS	7D_992214	gene	0.8720899
+			feature	DArTseq	7DS	7D_1100065	gene	0.8720899
+			feature	DArTseq	7DS	7D_1862353	gene	0.8720899
+			feature	DArTseq	7DS	7D_1126224	gene	0.87366
+			feature	DArTseq	7DS	7D_977708	gene	0.8949799
+			feature	DArTseq	7DS	7D_1074846	gene	0.8949799
+			feature	DArTseq	7DS	7D_1255260	gene	0.8949799
+			feature	DArTseq	7DS	7D_1191028	gene	0.8949799
+			feature	DArTseq	7DS	7D_1091599	gene	0.8949799
+			feature	DArTseq	7DS	7D_1233886	gene	0.8949799
+			feature	DArTseq	7DS	7D_1131240	gene	0.9062199
+			feature	DArTseq	7DS	7D_1132719	gene	0.9062199
+			feature	DArTseq	7DS	7D_2343307	gene	0.9062199
+			feature	DArTseq	7DS	7D_986730	gene	0.9062199
+			feature	DArTseq	7DS	7D_1071186	gene	0.9062199
+			feature	DArTseq	7DS	7D_1113210	gene	0.9062199
+			feature	DArTseq	7DS	7D_1669143	gene	0.9062199
+			feature	DArTseq	7DS	7D_2260370	gene	0.9062199
+			feature	DArTseq	7DS	7D_1007963	gene	0.9062199
+			feature	DArTseq	7DS	7D_1049897	gene	0.9062199
+			feature	DArTseq	7DS	7D_1126177	gene	0.9062199
+			feature	DArTseq	7DS	7D_2253062	gene	0.9062199
+			feature	DArTseq	7DS	7D_2245052	gene	0.9406999
+			feature	DArTseq	7DS	7D_1054923	gene	0.9519399
+			feature	DArTseq	7DS	7D_1109296	gene	0.9519399
+			feature	DArTseq	7DS	7D_1001914	gene	0.9630499
+			feature	DArTseq	7DS	7D_1129156	gene	0.9869999
+			feature	DArTseq	7DS	7D_2261570	gene	0.9869999
+			feature	DArTseq	7DS	7D_1103391	gene	0.9892299
+			feature	DArTseq	7DS	7D_1667206	gene	0.9982399
+			feature	DArTseq	7DS	7D_2250335	gene	0.9982399
+			feature	DArTseq	7DS	7D_1237421	gene	0.9982399
+			feature	DArTseq	7DS	7D_1298932	gene	0.9984599
+			feature	DArTseq	7DS	7D_2292943	gene	1.04723
+			feature	DArTseq	7DS	7D_1081883	gene	1.05571
+			feature	DArTseq	7DS	7D_1249565	gene	1.05571
+			feature	DArTseq	7DS	7D_2352829	gene	1.08257
+			feature	DArTseq	7DS	7D_2245066	gene	1.08257
+			feature	DArTseq	7DS	7D_1242114	gene	1.08257
+			feature	DArTseq	7DS	7D_1215756	gene	1.08257
+			feature	DArTseq	7DS	7D_2249991	gene	1.0942599
+			feature	DArTseq	7DS	7D_1233548	gene	1.11721
+			feature	DArTseq	7DS	7D_1698925	gene	1.12911
+			feature	DArTseq	7DS	7D_2250644	gene	1.12911
+			feature	DArTseq	7DS	7D_1697534	gene	1.12911
+			feature	DArTseq	7DS	7D_1047233	gene	1.12911
+			feature	DArTseq	7DS	7D_2243807	gene	1.12911
+			feature	DArTseq	7DS	7D_2250406	gene	1.12911
+			feature	DArTseq	7DS	7D_2253080	gene	1.12911
+			feature	DArTseq	7DS	7D_2259556	gene	1.12911
+			feature	DArTseq	7DS	7D_2259579	gene	1.82272
+			feature	DArTseq	7DS	7D_1389210	gene	1.15133
+			feature	DArTseq	7DS	7D_1216652	gene	1.16257
+			feature	DArTseq	7DS	7D_1059577	gene	1.17812
+			feature	DArTseq	7DS	7D_1202511	gene	1.18421
+			feature	DArTseq	7DS	7D_1695656	gene	1.19557
+			feature	DArTseq	7DS	7D_1236589	gene	1.19557
+			feature	DArTseq	7DS	7D_2252446	gene	1.2419
+			feature	DArTseq	7DS	7D_2252885	gene	1.2419
+			feature	DArTseq	7DS	7D_981742	gene	1.2419
+			feature	DArTseq	7DS	7D_1266717	gene	1.2419
+			feature	DArTseq	7DS	7D_1054594	gene	1.2419
+			feature	DArTseq	7DS	7D_1286101	gene	1.25314
+			feature	DArTseq	7DS	7D_1093784	gene	1.25314
+			feature	DArTseq	7DS	7D_1000236	gene	1.25314
+			feature	DArTseq	7DS	7D_999801	gene	1.26435
+			feature	DArTseq	7DS	7D_1107705	gene	1.2645
+			feature	DArTseq	7DS	7D_1279434	gene	1.2645
+			feature	DArTseq	7DS	7D_1318765	gene	1.2645
+			feature	DArTseq	7DS	7D_1022494	gene	1.2645
+			feature	DArTseq	7DS	7D_1233363	gene	1.27749
+			feature	DArTseq	7DS	7D_1211259	gene	1.28578
+			feature	DArTseq	7DS	7D_1184150	gene	1.29689
+			feature	DArTseq	7DS	7D_2258508	gene	1.29689
+			feature	DArTseq	7DS	7D_2263418	gene	1.29689
+			feature	DArTseq	7DS	7D_1069446	gene	1.30776
+			feature	DArTseq	7DS	7D_1074330	gene	1.31152
+			feature	DArTseq	7DS	7D_1163036	gene	1.32998
+			feature	DArTseq	7DS	7D_2261702	gene	1.32998
+			feature	DArTseq	7DS	7D_1088837	gene	1.35297
+			feature	DArTseq	7DS	7D_2290086	gene	1.35297
+			feature	DArTseq	7DS	7D_3222474	gene	1.35297
+			feature	DArTseq	7DS	7D_1079574	gene	1.35297
+			feature	DArTseq	7DS	7D_2260125	gene	1.3663
+			feature	DArTseq	7DS	7D_1077012	gene	1.37496
+			feature	DArTseq	7DS	7D_1068546	gene	1.37496
+			feature	DArTseq	7DS	7D_2327385	gene	1.37496
+			feature	DArTseq	7DS	7D_3033889	gene	1.39914
+			feature	DArTseq	7DS	7D_1112047	gene	1.39914
+			feature	DArTseq	7DS	7D_1122734	gene	1.39914
+			feature	DArTseq	7DS	7D_989436	gene	1.39914
+			feature	DArTseq	7DS	7D_2249455	gene	1.39914
+			feature	DArTseq	7DS	7D_2267173	gene	1.39914
+			feature	DArTseq	7DS	7D_1297443	gene	1.39914
+			feature	DArTseq	7DS	7D_1082140	gene	1.39914
+			feature	DArTseq	7DS	7D_1086330	gene	1.39914
+			feature	DArTseq	7DS	7D_1122705	gene	1.41038
+			feature	DArTseq	7DS	7D_2293954	gene	1.41038
+			feature	DArTseq	7DS	7D_1119375	gene	1.41038
+			feature	DArTseq	7DS	7D_1057211	gene	1.41038
+			feature	DArTseq	7DS	7D_1104560	gene	1.41038
+			feature	DArTseq	7DS	7D_989153	gene	1.42201
+			feature	DArTseq	7DS	7D_1232953	gene	1.432558
+			feature	DArTseq	7DS	7D_1051951	gene	1.43391
+			feature	DArTseq	7DS	7D_1237239	gene	1.43391
+			feature	DArTseq	7DS	7D_1064132	gene	1.43391
+			feature	DArTseq	7DS	7D_1080637	gene	1.44515
+			feature	DArTseq	7DS	7D_2265639	gene	1.44515
+			feature	DArTseq	7DS	7D_1242365	gene	1.4662
+			feature	DArTseq	7DS	7D_2250359	gene	1.4662
+			feature	DArTseq	7DS	7D_1032191	gene	1.4662
+			feature	DArTseq	7DS	7D_979924	gene	1.4662
+			feature	DArTseq	7DS	7D_2253949	gene	1.47783
+			feature	DArTseq	7DS	7D_2250645	gene	1.47783
+			feature	DArTseq	7DS	7D_2248955	gene	1.50193
+			feature	DArTseq	7DS	7D_1127060	gene	1.507365
+			feature	DArTseq	7DS	7D_1064610	gene	1.5128
+			feature	DArTseq	7DS	7D_1062859	gene	1.5128
+			feature	DArTseq	7DS	7D_2255905	gene	1.53579
+			feature	DArTseq	7DS	7D_1209140	gene	1.53579
+			feature	DArTseq	7DS	7D_2252085	gene	1.53579
+			feature	DArTseq	7DS	7D_1214103	gene	1.5381
+			feature	DArTseq	7DS	7D_1112449	gene	1.54887
+			feature	DArTseq	7DS	7D_1063543	gene	1.55536
+			feature	DArTseq	7DS	7D_1106400	gene	1.55852
+			feature	DArTseq	7DS	7D_1125633	gene	1.55852
+			feature	DArTseq	7DS	7D_1044792	gene	1.59185
+			feature	DArTseq	7DS	7D_2248471	gene	1.59185
+			feature	DArTseq	7DS	7D_2249250	gene	1.59185
+			feature	DArTseq	7DS	7D_1048534	gene	1.59185
+			feature	DArTseq	7DS	7D_2253411	gene	1.59185
+			feature	DArTseq	7DS	7D_1248016	gene	1.61439
+			feature	DArTseq	7DS	7D_1090338	gene	1.61439
+			feature	DArTseq	7DS	7D_2247959	gene	1.61439
+			feature	DArTseq	7DS	7D_990082	gene	1.61439
+			feature	DArTseq	7DS	7D_1042405	gene	1.61439
+			feature	DArTseq	7DS	7D_2246295	gene	1.61439
+			feature	DArTseq	7DS	7D_1865253	gene	1.61439
+			feature	DArTseq	7DS	7D_2242282	gene	1.61439
+			feature	DArTseq	7DS	7D_2244817	gene	1.61439
+			feature	DArTseq	7DS	7D_2253196	gene	1.61439
+			feature	DArTseq	7DS	7D_1120502	gene	1.61748
+			feature	DArTseq	7DS	7D_1105461	gene	1.64521
+			feature	DArTseq	7DS	7D_1094223	gene	1.65657
+			feature	DArTseq	7DS	7D_1210137	gene	1.65657
+			feature	DArTseq	7DS	7D_1202862	gene	1.65657
+			feature	DArTseq	7DS	7D_990768	gene	1.65657
+			feature	DArTseq	7DS	7D_2244963	gene	1.65657
+			feature	DArTseq	7DS	7D_1100154	gene	1.65657
+			feature	DArTseq	7DS	7D_2253120	gene	1.65657
+			feature	DArTseq	7DS	7D_1219051	gene	1.65657
+			feature	DArTseq	7DS	7D_1090059	gene	1.65657
+			feature	DArTseq	7DS	7D_1210124	gene	1.65657
+			feature	DArTseq	7DS	7D_1279554	gene	1.65657
+			feature	DArTseq	7DS	7D_1080590	gene	1.66781
+			feature	DArTseq	7DS	7D_1205704	gene	1.66781
+			feature	DArTseq	7DS	7D_2246631	gene	1.66781
+			feature	DArTseq	7DS	7D_2248850	gene	1.66781
+			feature	DArTseq	7DS	7D_2251428	gene	1.67892
+			feature	DArTseq	7DS	7D_1202797	gene	1.68406
+			feature	DArTseq	7DS	7D_1130443	gene	1.68751
+			feature	DArTseq	7DS	7D_1138475	gene	1.70066
+			feature	DArTseq	7DS	7D_1396134	gene	1.71229
+			feature	DArTseq	7DS	7D_2243078	gene	1.71229
+			feature	DArTseq	7DS	7D_979983	gene	1.71229
+			feature	DArTseq	7DS	7D_1238812	gene	1.71229
+			feature	DArTseq	7DS	7D_2264422	gene	1.71229
+			feature	DArTseq	7DS	7D_1014180	gene	1.71454
+			feature	DArTseq	7DS	7D_1280332	gene	1.71454
+			feature	DArTseq	7DS	7D_2242053	gene	1.72365
+			feature	DArTseq	7DS	7D_1054852	gene	1.72365
+			feature	DArTseq	7DS	7D_1189925	gene	1.72365
+			feature	DArTseq	7DS	7D_1365648	gene	1.72365
+			feature	DArTseq	7DS	7D_2245117	gene	1.72365
+			feature	DArTseq	7DS	7D_1091710	gene	1.72365
+			feature	DArTseq	7DS	7D_2248118	gene	1.72365
+			feature	DArTseq	7DS	7D_1217534	gene	1.72365
+			feature	DArTseq	7DS	7D_1254173	gene	1.72365
+			feature	DArTseq	7DS	7D_977333	gene	1.72365
+			feature	DArTseq	7DS	7D_985193	gene	1.72365
+			feature	DArTseq	7DS	7D_1030135	gene	1.72365
+			feature	DArTseq	7DS	7D_2242605	gene	1.72365
+			feature	DArTseq	7DS	7D_1249661	gene	1.73924
+			feature	DArTseq	7DS	7D_3020822	gene	1.7446
+			feature	DArTseq	7DS	7D_1122984	gene	1.74857
+			feature	DArTseq	7DS	7D_1102848	gene	1.75524
+			feature	DArTseq	7DS	7D_1669478	gene	1.75571
+			feature	DArTseq	7DS	7D_1102507	gene	1.75571
+			feature	DArTseq	7DS	7D_1048406	gene	1.75571
+			feature	DArTseq	7DS	7D_1249463	gene	1.75571
+			feature	DArTseq	7DS	7D_1107694	gene	1.75571
+			feature	DArTseq	7DS	7D_2242655	gene	1.75571
+			feature	DArTseq	7DS	7D_2244095	gene	1.75571
+			feature	DArTseq	7DS	7D_1076656	gene	1.75571
+			feature	DArTseq	7DS	7D_3222174	gene	1.75571
+			feature	DArTseq	7DS	7D_1106492	gene	1.76849
+			feature	DArTseq	7DS	7D_1210475	gene	1.78238
+			feature	DArTseq	7DS	7D_2246021	gene	1.79999
+			feature	DArTseq	7DS	7D_1108500	gene	1.79999
+			feature	DArTseq	7DS	7D_1210502	gene	1.79999
+			feature	DArTseq	7DS	7D_2242411	gene	1.79999
+			feature	DArTseq	7DS	7D_1102061	gene	1.82272
+			feature	DArTseq	7DS	7D_2244080	gene	1.82272
+			feature	DArTseq	7DS	7D_1092574	gene	1.82272
+			feature	DArTseq	7DS	7D_1077123	gene	1.82272
+			feature	DArTseq	7DS	7D_1103360	gene	1.82272
+			feature	DArTseq	7DS	7D_1150854	gene	1.82272
+			feature	DArTseq	7DS	7D_1099480	gene	1.83371
+			feature	DArTseq	7DS	7D_1210707	gene	1.83371
+			feature	DArTseq	7DS	7D_995111	gene	1.83371
+			feature	DArTseq	7DS	7D_1039067	gene	1.83371
+			feature	DArTseq	7DS	7D_1088107	gene	1.83371
+			feature	DArTseq	7DS	7D_1101652	gene	1.83371
+			feature	DArTseq	7DS	7D_2256125	gene	1.83371
+			feature	DArTseq	7DS	7D_1210408	gene	1.83371
+			feature	DArTseq	7DS	7D_2248958	gene	1.83371
+			feature	DArTseq	7DS	7D_1110200	gene	1.842307667
+			feature	DArTseq	7DS	7D_982564	gene	1.844951667
+			feature	DArTseq	7DS	7D_2244997	gene	1.85522
+			feature	DArTseq	7DS	7D_2255437	gene	1.85522
+			feature	DArTseq	7DS	7D_2249635	gene	1.86698
+			feature	DArTseq	7DS	7D_1101474	gene	1.86698
+			feature	DArTseq	7DS	7D_2247489	gene	1.86698
+			feature	DArTseq	7DS	7D_1089792	gene	1.86698
+			feature	DArTseq	7DS	7D_1104671	gene	1.86698
+			feature	DArTseq	7DS	7D_1110075	gene	1.86698
+			feature	DArTseq	7DS	7D_2244371	gene	1.86698
+			feature	DArTseq	7DS	7D_1071232	gene	1.86698
+			feature	DArTseq	7DS	7D_1216769	gene	1.86698
+			feature	DArTseq	7DS	7D_1304537	gene	1.86698
+			feature	DArTseq	7DS	7D_1044137	gene	1.86698
+			feature	DArTseq	7DS	7D_2250450	gene	1.86698
+			feature	DArTseq	7DS	7D_1106405	gene	1.86698
+			feature	DArTseq	7DS	7D_1127187	gene	1.86698
+			feature	DArTseq	7DS	7D_2259972	gene	1.86698
+			feature	DArTseq	7DS	7D_1131955	gene	1.86698
+			feature	DArTseq	7DS	7D_1164429	gene	1.86698
+			feature	DArTseq	7DS	7D_978788	gene	1.86698
+			feature	DArTseq	7DS	7D_1108773	gene	1.86698
+			feature	DArTseq	7DS	7D_1066224	gene	1.86698
+			feature	DArTseq	7DS	7D_1074729	gene	1.86698
+			feature	DArTseq	7DS	7D_2245752	gene	1.86698
+			feature	DArTseq	7DS	7D_2249301	gene	1.86698
+			feature	DArTseq	7DS	7D_1140635	gene	1.867183333
+			feature	DArTseq	7DS	7D_1248732	gene	1.88753
+			feature	DArTseq	7DS	7D_1021994	gene	1.88896
+			feature	DArTseq	7DS	7D_1119083	gene	1.89218
+			feature	DArTseq	7DS	7D_2330640	gene	1.90086
+			feature	DArTseq	7DS	7D_1220606	gene	1.90086
+			feature	DArTseq	7DS	7D_1112028	gene	1.90086
+			feature	DArTseq	7DS	7D_1238357	gene	1.90086
+			feature	DArTseq	7DS	7D_2243298	gene	1.90086
+			feature	DArTseq	7DS	7D_2247975	gene	1.90086
+			feature	DArTseq	7DS	7D_1076392	gene	1.90086
+			feature	DArTseq	7DS	7D_1083998	gene	1.90086
+			feature	DArTseq	7DS	7D_1075983	gene	1.90086
+			feature	DArTseq	7DS	7D_1056911	gene	1.90086
+			feature	DArTseq	7DS	7D_2244766	gene	1.90086
+			feature	DArTseq	7DS	7D_3034026	gene	1.90086
+			feature	DArTseq	7DS	7D_1061888	gene	1.90086
+			feature	DArTseq	7DS	7D_981585	gene	1.90086
+			feature	DArTseq	7DS	7D_1095698	gene	1.90086
+			feature	DArTseq	7DS	7D_2262456	gene	1.90086
+			feature	DArTseq	7DS	7D_1060527	gene	1.90086
+			feature	DArTseq	7DS	7D_1237706	gene	1.90086
+			feature	DArTseq	7DS	7D_1218816	gene	1.90086
+			feature	DArTseq	7DS	7D_1090020	gene	1.90086
+			feature	DArTseq	7DS	7D_1237754	gene	1.90086
+			feature	DArTseq	7DS	7D_1243398	gene	1.90086
+			feature	DArTseq	7DS	7D_1046866	gene	1.90086
+			feature	DArTseq	7DS	7D_1066116	gene	1.90086
+			feature	DArTseq	7DS	7D_1216219	gene	1.90086
+			feature	DArTseq	7DS	7D_2247320	gene	1.90086
+			feature	CSxRe	7DS	cfn3614430	gene	0
+			feature	CSxRe	7DS	cfn3624483	gene	1.728
+			feature	CSxRe	7DS	cfn0942373	gene	1.86
+			feature	CSxRe	7DS	cfn3615402	gene	1.86
+			feature	CSxRe	7DS	cfn3617035	gene	1.992
+			feature	CSxRe	7DS	cfn3610811	gene	2.645
+			feature	CSxRe	7DS	cfn0943792	gene	3.294
+			feature	CSxRe	7DS	cfn3607818	gene	4.103
+			feature	CSxRe	7DS	cfn3619085	gene	4.498
+			feature	CSxRe	7DS	cfn3606409	gene	5.79
+			feature	CSxRe	7DS	cfn3621314	gene	5.79
+			feature	CSxRe	7DS	cfn3608715	gene	5.79
+			feature	CSxRe	7DS	cfn3611176	gene	5.79
+			feature	CSxRe	7DS	cfn0942846	gene	5.79
+			feature	CSxRe	7DS	cfn0943579	gene	5.79
+			feature	CSxRe	7DS	cfn3614441	gene	5.79
+			feature	CSxRe	7DS	cfn0943565	gene	5.79
+			feature	CSxRe	7DS	cfn3624432	gene	5.79
+			feature	CSxRe	7DS	cfn0944382	gene	5.79
+			feature	CSxRe	7DS	cfn3608559	gene	5.79
+			feature	CSxRe	7DS	cfn3614036	gene	5.79
+			feature	CSxRe	7DS	cfn0943231	gene	5.79
+			feature	CSxRe	7DS	cfn0942080	gene	5.79
+			feature	CSxRe	7DS	cfn3604301	gene	5.79
+			feature	CSxRe	7DS	cfn3618420	gene	5.79
+			feature	CSxRe	7DS	cfn3603922	gene	8.055
+			feature	CSxRe	7DS	cfn3622295	gene	8.055
+			feature	CSxRe	7DS	cfn3603343	gene	8.312
+			feature	CSxRe	7DS	cfn3605257	gene	8.312
+			feature	CSxRe	7DS	cfn0945049	gene	8.439
+			feature	CSxRe	7DS	cfn3607678	gene	8.439
+			feature	CSxRe	7DS	cfn3619803	gene	8.439
+			feature	CSxRe	7DS	cfn0942408	gene	8.499180402
+			feature	CSxRe	7DS	cfn3603097	gene	8.501180271
+			feature	CSxRe	7DS	cfn3606976	gene	8.520352195
+			feature	CSxRe	7DS	cfn3625048	gene	8.520352195
+			feature	CSxRe	7DS	cfn3608920	gene	8.520352195
+			feature	CSxRe	7DS	cfn3621749	gene	8.520352195
+			feature	CSxRe	7DS	cfn0942066	gene	8.529971675
+			feature	CSxRe	7DS	cfn0944925	gene	8.529971675
+			feature	CSxRe	7DS	cfn3604754	gene	8.529971675
+			feature	CSxRe	7DS	cfn3605812	gene	8.529971675
+			feature	CSxRe	7DS	cfn3618906	gene	8.529971675
+			feature	CSxRe	7DS	cfn3609076	gene	8.529971675
+			feature	CSxRe	7DS	cfn3607004	gene	8.529971675
+			feature	CSxRe	7DS	cfn3611171	gene	8.540060397
+			feature	CSxRe	7DS	cfn3618620	gene	8.540797779
+			feature	CSxRe	7DS	cfn0944613	gene	8.542892613
+			feature	CSxRe	7DS	cfn3610085	gene	8.549696635
+			feature	CSxRe	7DS	cfn3616441	gene	8.584202747
+			feature	CSxRe	7DS	cfn0944890	gene	8.590219111
+			feature	CSxRe	7DS	cfn0945263	gene	8.591548633
+			feature	CSxRe	7DS	cfn3609445	gene	8.592213394
+			feature	CSxRe	7DS	cfn3618960	gene	8.597604101
+			feature	CSxRe	7DS	cfn3614409	gene	8.626306125
+			feature	CSxRe	7DS	cfn3606376	gene	8.636769125
+			feature	CSxRe	7DS	cfn0945211	gene	8.694
+			feature	CSxRe	7DS	cfn3603903	gene	8.694
+			feature	CSxRe	7DS	cfn3606453	gene	8.694
+			feature	CSxRe	7DS	cfn3608196	gene	8.694
+			feature	CSxRe	7DS	cfn3609736	gene	8.694
+			feature	CSxRe	7DS	cfn0942103	gene	8.704597931
+			feature	CSxRe	7DS	cfn3613007	gene	8.75679931
+			feature	CSxRe	7DS	cfn0942749	gene	8.821
+			feature	CSxRe	7DS	cfn3610009	gene	8.821
+			feature	CSxRe	7DS	cfn3621370	gene	8.821
+			feature	CSxRe	7DS	cfn3623394	gene	8.821
+			feature	CSxRe	7DS	cfn3619693	gene	8.828070016
+			feature	CSxRe	7DS	cfn0942231	gene	8.838582574
+			feature	CSxRe	7DS	cfn0944115	gene	8.847188931
+			feature	CSxRe	7DS	cfn3616064	gene	8.894772838
+			feature	CSxRe	7DS	cfn0942945	gene	8.949
+			feature	CSxRe	7DS	cfn3612007	gene	8.949
+			feature	CSxRe	7DS	cfn3614405	gene	9.076
+			feature	CSxRe	7DS	cfn3619250	gene	9.076
+			feature	CSxRe	7DS	cfn3623521	gene	9.076
+			feature	CSxRe	7DS	cfn0942314	gene	9.076
+			feature	CSxRe	7DS	cfn0944251	gene	9.076
+			feature	CSxRe	7DS	cfn0944833	gene	9.076
+			feature	CSxRe	7DS	cfn3602958	gene	9.076
+			feature	CSxRe	7DS	cfn3605433	gene	9.076
+			feature	CSxRe	7DS	cfn3607698	gene	9.076
+			feature	CSxRe	7DS	cfn3608346	gene	9.076
+			feature	CSxRe	7DS	cfn3608851	gene	9.076
+			feature	CSxRe	7DS	cfn3613848	gene	9.076
+			feature	CSxRe	7DS	cfn3621158	gene	9.076
+			feature	CSxRe	7DS	cfn3622396	gene	9.076
+			feature	CSxRe	7DS	cfn3603978	gene	9.116706381
+			feature	CSxRe	7DS	cfn3604601	gene	9.166415753
+			feature	CSxRe	7DS	cfn3617075	gene	9.334
+			feature	CSxRe	7DS	cfn3624471	gene	9.979
+			feature	CSxRe	7DS	cfn0942306	gene	10.242
+			feature	CSxRe	7DS	cfn3605492	gene	10.242
+			feature	CSxRe	7DS	cfn3611878	gene	10.242
+			feature	CSxRe	7DS	cfn0943963	gene	10.375
+			feature	CSxRe	7DS	cfn3608835	gene	10.375
+			feature	CSxRe	7DS	cfn3616660	gene	10.375
+			feature	CSxRe	7DS	cfn3619893	gene	10.375
+			feature	CSxRe	7DS	cfn3625035	gene	10.375
+			feature	CSxRe	7DS	cfn0945124	gene	10.632
+			feature	CSxRe	7DS	cfn3620119	gene	10.632
+			feature	CSxRe	7DS	cfn0942545	gene	10.65005392
+			feature	CSxRe	7DS	cfn3607131	gene	10.66247526
+			feature	CSxRe	7DS	cfn3605477	gene	10.70657248
+			feature	CSxRe	7DS	cfn3623499	gene	10.70657248
+			feature	CSxRe	7DS	cfn3618875	gene	10.759
+			feature	CSxRe	7DS	cfn3605001	gene	10.759
+			feature	CSxRe	7DS	cfn3604563	gene	10.759
+			feature	CSxRe	7DS	cfn3623102	gene	10.759
+			feature	CSxRe	7DS	cfn3604189	gene	10.759
+			feature	CSxRe	7DS	cfn3608643	gene	10.759
+			feature	CSxRe	7DS	cfn3610697	gene	10.759
+			feature	CSxRe	7DS	cfn3614395	gene	10.759
+			feature	CSxRe	7DS	cfn3617543	gene	10.759
+			feature	CSxRe	7DS	cfn3620370	gene	10.759
+			feature	CSxRe	7DS	cfn0942483	gene	10.759
+			feature	CSxRe	7DS	cfn3603149	gene	10.759
+			feature	CSxRe	7DS	cfn3605231	gene	10.759
+			feature	CSxRe	7DS	cfn3617366	gene	10.759
+			feature	CSxRe	7DS	cfn3622631	gene	10.759
+			feature	CSxRe	7DS	cfn3622741	gene	10.759
+			feature	CSxRe	7DS	cfn3604907	gene	11.014
+			feature	CSxRe	7DS	cfn0943389	gene	11.05734345
+			feature	CSxRe	7DS	cfn0944737	gene	11.05734345
+			feature	CSxRe	7DS	cfn3613988	gene	11.05734345
+			feature	CSxRe	7DS	cfn3611618	gene	11.05734345
+			feature	CSxRe	7DS	cfn3611548	gene	11.142
+			feature	CSxRe	7DS	cfn3612247	gene	11.142
+			feature	CSxRe	7DS	cfn3614327	gene	11.142
+			feature	CSxRe	7DS	cfn3603596	gene	11.35732792
+			feature	CSxRe	7DS	cfn3611615	gene	11.35732792
+			feature	CSxRe	7DS	cfn0942661	gene	11.402
+			feature	CSxRe	7DS	cfn3614290	gene	11.402
+			feature	CSxRe	7DS	cfn3615085	gene	11.402
+			feature	CSxRe	7DS	cfn3606493	gene	11.402
+			feature	CSxRe	7DS	cfn3606736	gene	11.402
+			feature	CSxRe	7DS	cfn3614452	gene	11.402
+			feature	CSxRe	7DS	cfn3604939	gene	11.85273632
+			feature	CSxRe	7DS	cfn3612347	gene	11.85273632
+			feature	CSxRe	7DS	cfn3613956	gene	11.85273632
+			feature	CSxRe	7DS	cfn3603607	gene	12.16930434
+			feature	CSxRe	7DS	cfn3619463	gene	12.21542768
+			feature	CSxRe	7DS	cfn3619167	gene	12.56295872
+			feature	CSxRe	7DS	cfn3614865	gene	12.64222921
+			feature	CSxRe	7DS	cfn3617433	gene	12.67344918
+			feature	CSxRe	7DS	cfn3603033	gene	12.8152881
+			feature	CSxRe	7DS	cfn3616190	gene	12.994
+			feature	CSxRe	7DS	cfn3625011	gene	13.98242
+			feature	CSxRe	7DS	cfn0943884	gene	16.835
+			feature	CSxRe	7DS	cfn0945471	gene	18.026
+			feature	CSxRe	7DS	cfn3619369	gene	18.155
+			feature	CSxRe	7DS	cfn3622120	gene	18.32071177
+			feature	CSxRe	7DS	cfn3606355	gene	18.48574992
+			feature	CSxRe	7DS	cfn3615919	gene	18.57736293
+			feature	CSxRe	7DS	cfn3619137	gene	19.0542895
+			feature	CSxRe	7DS	cfn3605368	gene	24.512
+			feature	CSxRe	7DS	cfn3613135	gene	24.512
+			feature	CSxRe	7DS	cfn3615917	gene	24.512
+			feature	CSxRe	7DS	cfn3603902	gene	27.965
+			feature	CSxRe	7DS	cfn0942245	gene	28.094
+			feature	CSxRe	7DS	cfn3607714	gene	28.12954875
+			feature	CSxRe	7DS	cfn3623465	gene	28.351
+			feature	CSxRe	7DS	cfn3611995	gene	29.526
+			feature	CSxRe	7DS	cfn0945313	gene	30.444
+			feature	CSxRe	7DS	cfn3602802	gene	32.014
+			feature	CSxRe	7DS	cfn3618781	gene	32.014
+			feature	CSxRe	7DS	cfn3618327	gene	33.347
+			feature	CSxRe	7DS	cfn3615959	gene	33.9406862
+			feature	CSxRe	7DS	cfn3605246	gene	34.131
+			feature	CSxRe	7DS	cfn0942399	gene	34.34972525
+			feature	CSxRe	7DS	cfn3615965	gene	34.389
+			feature	CSxRe	7DS	cfn3606120	gene	38.56
+			feature	CSxRe	7DS	cfn3611021	gene	38.56
+			feature	CSxRe	7DS	cfn3615250	gene	38.56
+			feature	CSxRe	7DS	cfn3612679	gene	39.38525792
+			feature	CSxRe	7DS	cfn3609792	gene	41.91811576
+			feature	CSxRe	7DS	cfn3622538	gene	44.852
+			feature	CSxRe	7DS	cfn3610312	gene	44.99453991
+			feature	CSxRe	7DS	cfn3603211	gene	46.157
+			feature	CSxRe	7DS	cfn3603226	gene	46.673
+			feature	CSxRe	7DS	cfn3613632	gene	50.07406529
+			feature	CSxRe	7DS	cfn3608840	gene	50.2
+			feature	CSxRe	7DS	cfn3621223	gene	51.92
+			feature	CSxRe	7DS	cfn0945489	gene	52.566
+			feature	CSxRe	7DS	cfn3612916	gene	54.303
+			feature	CSxRe	7DS	cfn0945162	gene	54.303
+			feature	CSxRe	7DS	cfn3620796	gene	54.303
+			feature	CSxRe	7DS	cfn0943713	gene	58.98582697
+			feature	CSxRe	7DS	cfn3609702	gene	60.289
+			feature	CSxRe	7DS	cfn3609771	gene	61.31818799
+			feature	CSxRe	7DS	cfn3607848	gene	61.56370039
+			feature	CSxRe	7DS	cfn0942229	gene	63.06230809
+			feature	CSxRe	7DS	cfn0943371	gene	63.298
+			feature	CSxRe	7DS	cfn3612985	gene	64.5282718
+			feature	CSxRe	7DS	cfn0945473	gene	64.886
+			feature	CSxRe	7DS	cfn0942021	gene	67.47
+			feature	CSxRe	7DS	cfn3605517	gene	67.47
+			feature	CSxRe	7DS	cfn3616466	gene	67.598
+			feature	CSxRe	7DS	cfn3620622	gene	67.598
+			feature	CSxRe	7DS	cfn3609037	gene	67.983
+			feature	CSxRe	7DS	cfn0943885	gene	68.24
+			feature	CSxRe	7DS	cfn3604569	gene	68.60480925
+			feature	CSxRe	7DS	cfn3622932	gene	68.60480925
+			feature	CSxRe	7DS	cfn3617887	gene	68.79093642
+			feature	CSxRe	7DS	cfn3612640	gene	69.398
+			feature	CSxRe	7DS	cfn0943176	gene	69.398
+			feature	CSxRe	7DS	cfn0944947	gene	69.83132493
 		</textarea>
 		<br>
 		<br>
-		<input type="text" name="dev_id" placeholder="Device ID" value="001">
+		<input type="text" id="dev_id" name="dev_id" placeholder="Device ID" value="0">
 		<br>
 	    <input type="submit" value="Post">
 	</form>
 
 
-	<a href="{{node_address}}/mine" target="_blank"><button>Mine blocks in buffer</button></a>
+	<a href="{{node_address}}/mine" target="_blank"><button  >Mine blocks in buffer</button></a>
 	<br><br>
 	<a href="/"><button>Reload</button></a>
 	</center>

@@ -6,14 +6,33 @@ import requests
 import random
 import app.globals as globals
 import time
+import math
 leader_group = []
+
+def leader_group_size():
+    with open('app/globals.json', 'r+') as f:
+        data = json.load(f)
+        global leader_group
+        leader_group =[]
+        total = data['NUM']
+        num = int(math.ceil(total/(3.5)))
+        l = []
+        for i in range(num):
+            l.append(i)
+        leader_group = random.sample(l, num)
+        data["leader_group"] = leader_group
+        f.seek(0)     
+        json.dump(data, f, indent=4)
+        f.truncate() 
+    return
+
 #Leader election protocol
 def update_leader():
     with open('app/globals.json', 'r+') as f:
         data = json.load(f)
         print("OLD LEADER: ")
         print(data['CURRENT_LEADER'])
-        data['CURRENT_LEADER'] = random.randint(0,9)
+        data['CURRENT_LEADER'] = start_bid()
         #Ignore lower trust score nodes
         while(data['trust_score'][data["CURRENT_LEADER"]]<0):
             data['CURRENT_LEADER'] = random.randint(0,9)
@@ -29,16 +48,23 @@ def update_leader_group():
     with open('app/globals.json', 'r+') as f:
         data = json.load(f)
         leader_group = data['leader_group']
-        print("OLD LEADER GROUP: ")
+        print("OLD Node Committee: ")
         print(leader_group)
         with open('app/globals.json', 'r+') as f:
             data = json.load(f)
             if(data['CURRENT_LEADER'] in leader_group):
                 print(data['CURRENT_LEADER'])
             else:
-                del leader_group[0]
+                credit = data['credit']
+                minindex = leader_group[0]
+                for i in range(len(leader_group)):
+                    if credit[minindex] > credit[leader_group[i]]:
+                        minindex = leader_group[i]
+                print("Node committee member removed: ")
+                print(minindex)
+                leader_group.remove(minindex)
                 leader_group.append(data["CURRENT_LEADER"])
-            print("LEADER GROUP: ")
+            print("New Node Committee: ")
             print(leader_group)
             f.seek(0)
             data['leader_group'] = leader_group     
@@ -411,9 +437,33 @@ def incentive():
         f.truncate() 
 
 #Auction Mechanism
+def get_bid():
+    with open('app/globals.json', 'r+') as f:
+        data = json.load(f)
+        arr=[]
+        for i in range(data["NUM"]):
+            arr.append(random.randint(1,100)*5)
+        data['bid_amount'] = arr
+        f.seek(0)     
+        json.dump(data, f, indent=4)
+        f.truncate() 
+
 def start_bid():
-    print('Starting Auction For selection of new leader node')
-    return
+    print('Starting Private Auction For selection of new leader node')
+    get_bid()
+    with open('app/globals.json', 'r+') as f:
+        data = json.load(f)
+        arr = data['bid_amount']
+        maxi = 0
+        for i in range(len(arr)):
+            if arr[i] > arr[maxi]:
+                maxi=i
+        data["CURRENT_LEADER"] = maxi
+        print("Auction winner: "+str(maxi)+"\nWinning Bid: "+str(arr[maxi]))
+        f.seek(0)     
+        json.dump(data, f, indent=4)
+        f.truncate() 
+    return maxi
 
 def consensus():
     global blockchain

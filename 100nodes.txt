@@ -1,0 +1,653 @@
+export FLASK_APP=node_server.py
+
+flask run --port 8000 &
+flask run --port 8001 &
+flask run --port 8002 &
+flask run --port 8003 &
+flask run --port 8004 &
+flask run --port 8005 &
+flask run --port 8006 &
+flask run --port 8007 &
+flask run --port 8008 &
+flask run --port 8009 &
+flask run --port 8010 &
+flask run --port 8011 &
+flask run --port 8012 &
+flask run --port 8013 &
+flask run --port 8014 &
+flask run --port 8015 &
+flask run --port 8016 &
+flask run --port 8017 &
+flask run --port 8018 &
+flask run --port 8019 &
+flask run --port 8020 &
+flask run --port 8021 &
+flask run --port 8022 &
+flask run --port 8023 &
+flask run --port 8024 &
+flask run --port 8025 &
+flask run --port 8026 &
+flask run --port 8027 &
+flask run --port 8028 &
+flask run --port 8029 &
+flask run --port 8030 &
+flask run --port 8031 &
+flask run --port 8032 &
+flask run --port 8033 &
+flask run --port 8034 &
+flask run --port 8035 &
+flask run --port 8036 &
+flask run --port 8037 &
+flask run --port 8038 &
+flask run --port 8039 &
+flask run --port 8040 &
+flask run --port 8041 &
+flask run --port 8042 &
+flask run --port 8043 &
+flask run --port 8044 &
+flask run --port 8045 &
+flask run --port 8046 &
+flask run --port 8047 &
+flask run --port 8048 &
+flask run --port 8049 &
+flask run --port 8050 &
+flask run --port 8051 &
+flask run --port 8052 &
+flask run --port 8053 &
+flask run --port 8054 &
+flask run --port 8055 &
+flask run --port 8056 &
+flask run --port 8057 &
+flask run --port 8058 &
+flask run --port 8059 &
+flask run --port 8060 &
+flask run --port 8061 &
+flask run --port 8062 &
+flask run --port 8063 &
+flask run --port 8064 &
+flask run --port 8065 &
+flask run --port 8066 &
+flask run --port 8067 &
+flask run --port 8068 &
+flask run --port 8069 &
+flask run --port 8070 &
+flask run --port 8071 &
+flask run --port 8072 &
+flask run --port 8073 &
+flask run --port 8074 &
+flask run --port 8075 &
+flask run --port 8076 &
+flask run --port 8077 &
+flask run --port 8078 &
+flask run --port 8079 &
+flask run --port 8080 &
+flask run --port 8081 &
+flask run --port 8082 &
+flask run --port 8083 &
+flask run --port 8084 &
+flask run --port 8085 &
+flask run --port 8086 &
+flask run --port 8087 &
+flask run --port 8088 &
+flask run --port 8089 &
+flask run --port 8090 &
+flask run --port 8091 &
+flask run --port 8092 &
+flask run --port 8093 &
+flask run --port 8094 &
+flask run --port 8095 &
+flask run --port 8096 &
+flask run --port 8097 &
+flask run --port 8098 &
+flask run --port 8099 &
+flask run --port 8100 &
+
+
+
+python3 run_app.py
+
+
+curl -X POST \
+  http://127.0.0.1:8000/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8001"}'
+
+
+
+
+
+curl -X POST \
+  http://127.0.0.1:8001/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8002/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8003/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8004/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8005/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8006/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8007/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8008/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8009/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8010/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8011/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8012/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8013/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8014/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8015/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8016/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8017/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8018/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8019/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8020/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8021/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8022/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8023/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8024/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8025/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8026/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8027/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8028/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8029/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8030/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8031/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8032/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8033/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8034/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8035/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8036/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8037/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8038/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8039/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8040/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8041/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8042/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8043/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8044/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8045/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8046/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8047/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8048/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8049/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8050/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8051/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8052/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8053/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8054/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8055/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8056/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8057/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8058/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8059/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8060/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8061/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8062/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8063/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8064/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8065/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8066/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8067/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8068/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8069/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8070/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8071/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8072/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8073/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8074/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8075/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8076/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8077/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8078/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8079/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+  http://127.0.0.1:8080/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8081/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8082/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8083/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8084/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8085/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8086/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8087/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8088/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8089/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8090/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+
+curl -X POST \
+  http://127.0.0.1:8091/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8092/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8093/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8094/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8095/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8096/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8097/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8098/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8099/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+curl -X POST \
+  http://127.0.0.1:8100/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000"}'
+
+
+
+

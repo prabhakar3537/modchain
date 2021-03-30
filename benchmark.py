@@ -4,6 +4,7 @@ import numpy as np
 l = []
 x = []
 """
+            Old
 50 50kb - 839.376846629079
 100 50kb - 822.6593285454867
 25 50kb - 800.8970046452029
@@ -12,9 +13,9 @@ x = []
 25 25kb - 1156.0159067788516
 
 """
-with open('app/time_mod.json', 'r+') as f:
+with open('app/new_time.json', 'r+') as f:
     data = json.load(f)
-    l = data['time_mod_25_1mb_difficulty0']
+    l = data['leader_size_6_10n']
 for i in range(len(l)):
     x.append(i)
 
