@@ -651,3 +651,21 @@ curl -X POST \
 
 
 
+
+
+
+
+
+curl -X POST \
+  http://127.0.0.1:8101/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8000",
+  	"chain": "{\"index\": 0, \"subblocks\": [], \"timestamp\": 0, \"previous_hash\": \"0\", \"nonce\": 0, \"hash\": \"b1ffd4a02169998c0f8b7ebdd61e87a8c91d3a62018a4c9b09f038cf05d45c48\"}, {\"index\": 1, \"subblocks\": [{\"content\": \"block1\", \"dev_id\": \"0\", \"timestamp\": 1617788717.978577}], \"timestamp\": 1617788719.9132366, \"previous_hash\": \"b1ffd4a02169998c0f8b7ebdd61e87a8c91d3a62018a4c9b09f038cf05d45c48\", \"nonce\": 0, \"hash\": \"da3a1f344caa739db260581f76cc091b9597d0543e2017511f5e3608e9b95215\"}, {\"index\": 2, \"subblocks\": [{\"content\": \"tfyjgkuh\", \"dev_id\": \"0\", \"timestamp\": 1617794251.3148265}, {\"content\": \"ygujgkuj\", \"dev_id\": \"0\", \"timestamp\": 1617794262.4749193}], \"timestamp\": 1617794266.3396094, \"previous_hash\": \"da3a1f344caa739db260581f76cc091b9597d0543e2017511f5e3608e9b95215\", \"nonce\": 0, \"hash\": \"f36602a6ee894c95c8b505e17737f794db6a8b6b2d6045c2a07fda420a2c32d8\"}"}'
+
+curl -X POST \
+  http://127.0.0.1:8000/register_with \
+  -H 'Content-Type: application/json' \
+  -d '{"node_address": "http://127.0.0.1:8101",
+  	"chain": "{\"index\": 0, \"subblocks\": [], \"timestamp\": 0, \"previous_hash\": \"0\", \"nonce\": 0, \"hash\": \"b1ffd4a02169998c0f8b7ebdd61e87a8c91d3a62018a4c9b09f038cf05d45c48\"}, {\"index\": 1, \"subblocks\": [{\"content\": \"block1\", \"dev_id\": \"0\", \"timestamp\": 1617788717.978577}], \"timestamp\": 1617788719.9132366, \"previous_hash\": \"b1ffd4a02169998c0f8b7ebdd61e87a8c91d3a62018a4c9b09f038cf05d45c48\", \"nonce\": 0, \"hash\": \"da3a1f344caa739db260581f76cc091b9597d0543e2017511f5e3608e9b95215\"}, {\"index\": 2, \"subblocks\": [{\"content\": \"tfyjgkuh\", \"dev_id\": \"0\", \"timestamp\": 1617794251.3148265}, {\"content\": \"ygujgkuj\", \"dev_id\": \"0\", \"timestamp\": 1617794262.4749193}], \"timestamp\": 1617794266.3396094, \"previous_hash\": \"da3a1f344caa739db260581f76cc091b9597d0543e2017511f5e3608e9b95215\", \"nonce\": 0, \"hash\": \"f36602a6ee894c95c8b505e17737f794db6a8b6b2d6045c2a07fda420a2c32d8\"}"}'
+
+
