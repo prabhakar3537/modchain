@@ -1,5 +1,5 @@
-NUM = 10
-group_size = 10
+NUM = 100
+group_size = 35
 MAX_TRANS = 10
 
 time_mod_50 = [

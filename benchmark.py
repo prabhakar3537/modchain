@@ -13,9 +13,26 @@ x = []
 25 25kb - 1156.0159067788516
 
 """
-with open('app/new_time.json', 'r+') as f:
+"""
+            New
+
+10 nodes 1 leader - 801
+10 nodes 3 leader - 802
+10 nodes 6 leader - 772
+10 nodes 10 leader- 640
+
+10 nodes 3 leader - 802
+50 nodes 18leader - 1380
+100nodes 35leader - 1383
+
+25kb - 1156
+50kb - 800
+100kb- 448
+1mb  - 60
+"""
+with open('app/time_mod.json', 'r+') as f:
     data = json.load(f)
-    l = data['leader_size_6_10n']
+    l = data['time_mod_25_50kb_difficulty0']
 for i in range(len(l)):
     x.append(i)
 
